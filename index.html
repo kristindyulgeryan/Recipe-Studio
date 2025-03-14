@@ -1,423 +1,376 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<header className="header">
+  <nav className="navbar navbar-expand-lg">
+    <div className="container">
+      <a className="navbar-brand logo" href="/"
+        ><img src="imgs/logo.jpg" alt=""
+      /></a>
+      <button
+        className="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span className="navbar-toggler-icon"></span>
+      </button>
+      <div className="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li className="nav-item">
+            <a className="nav-link" href="/catalog">Recipe Gallery</a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href="/create">Recipe Factory</a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href="/about">About Us</a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href="/login">Sign In</a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href="register">Sign Up</a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href="/logout">Sign Out</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
 
-    <!-- bootstrap link  -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
-    />
+<!--  home page -->
 
-    <!-- font awsome cdn link   -->
-
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-
-    <!-- custome cdn link  -->
-    <link rel="stylesheet" href="style.css" />
-    <link
-      rel="shortcut icon"
-      href="https://i.pinimg.com/736x/3a/28/b1/3a28b1d190d12ec5345d7669227eb329.jpg"
-      type="image/x-icon"
-    />
-    <title>Recipe Studio</title>
-  </head>
-
-  <body class="no-scroll">
-    <header class="header">
-      <nav class="navbar navbar-expand-lg">
-        <div class="container">
-          <a class="navbar-brand logo" href="/"
-            ><img src="imgs/logo.jpg" alt=""
-          /></a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link" href="/catalog">Recipe Gallery</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/create">Recipe Factory</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/about">About Us</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/login">Sign In</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="register">Sign Up</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/logout">Sign Out</a>
-              </li>
-            </ul>
-          </div>
+<section className="banner-sec">
+  <div className="container">
+    <div className="row">
+      <div className="banner-content">
+        <h6>Mix It, Make It</h6>
+        <h2>Where Health Meets Flavor in Every Bite</h2>
+        <p>
+          Fill your kitchen with fresh, wholesome ingredients and simple,
+          nutritious recipes that nourish your body and soul.
+        </p>
+        <div className="nav-btn mt-4">
+          <a href="/create"
+            >Start Cooking Today <i className="fa-solid fa-arrow-right"></i
+          ></a>
         </div>
-      </nav>
-    </header>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!--  home page -->
+<!-- about section  -->
 
-    <section class="banner-sec">
-      <div class="container">
-        <div class="row">
-          <div class="banner-content">
-            <h6>Mix It, Make It</h6>
-            <h2>Where Health Meets Flavor in Every Bite</h2>
+<section className="about-sec py-5">
+  <div className="container">
+    <div className="about row">
+      <div className="col-lg-6 col-md-12">
+        <div className="about-img">
+          <img src="imgs/family.png" alt="" />
+        </div>
+      </div>
+      <div className="col-lg-6 col-md-12">
+        <p className="title-p">About Us</p>
+        <h2 className="title-h">Nurturing Health Through Homemade Cooking</h2>
+        <p>
+          At Recipe Studio, we believe in the power of homemade food to bring
+          families and friends together while promoting health and wellness. Our
+          mission is to provide simple, nourishing recipes that you can make at
+          home, using fresh ingredients that are good for your body and soul.
+        </p>
+        <p>
+          We are committed to creating a platform where everyone can find
+          easy-to-follow recipes, whether you're looking for a quick weeknight
+          dinner or a special meal to share with loved ones. Our focus is on
+          quality, authenticity, and supporting healthy lifestyles—one homemade
+          dish at a time!
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Login -->
+<section id="login-page" className="auth">
+  <form id="login">
+    <div className="container">
+      <div className="brand-logo"></div>
+      <h1>Sign In</h1>
+      <label for="email">Email:</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="Sokka@gmail.com"
+      />
+      <label for="login-pass">Password:</label>
+      <input type="password" id="login-password" name="password" />
+      <input type="submit" className="btn submit" value="Login" />
+      <p className="field">
+        <span
+          >If you don't have profile click <a href="/register">here</a></span
+        >
+      </p>
+    </div>
+  </form>
+</section>
+
+<!-- Register -->
+<section id="register-page" className="auth">
+  <form id="register">
+    <div className="container">
+      <div className="brand-logo"></div>
+      <h1>Sign Up</h1>
+      <label for="email">Email:</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="maria@email.com"
+      />
+      <label for="pass">Password:</label>
+      <input type="password" name="password" id="register-password" />
+      <label for="con-pass">Confirm Password:</label>
+      <input type="password" name="confirm-password" id="confirm-password" />
+      <input className="btn submit" type="submit" value="Register" />
+      <p className="field">
+        <span>If you already have profile click <a href="/login">here</a></span>
+      </p>
+    </div>
+  </form>
+</section>
+
+<!-- Recipe Form -->
+<section id="recipe-form">
+  <form id="recipe-form-container">
+    <div className="container">
+      <h2>Add Your Recipe</h2>
+      <label for="recipe-title">Recipe Name:</label>
+      <input
+        type="text"
+        id="recipe-title"
+        placeholder="Enter recipe title"
+        required
+      />
+
+      <label for="recipe-description">Ingredients:</label>
+      <textarea
+        id="recipe-description"
+        placeholder="Flour, cheese, tomatoes..."
+        rows="5"
+        required
+      ></textarea>
+
+      <label for="image">Upload Image:</label>
+      <input type="file" id="image" name="image" accept="image/*" />
+      <!-- <label for="recipe-image">Recipe Image URL:</label>
+            <input type="url" id="recipe-image" placeholder="Enter image URL" required> -->
+      <input type="submit" value="Submit Recipe" />
+    </div>
+  </form>
+</section>
+
+<!-- Recipe Form -->
+<section id="edit-form">
+  <form id="edit-form-container">
+    <div className="container">
+      <h2>Edit Your Recipe</h2>
+      <label for="recipe-title">Recipe Name:</label>
+      <input
+        type="text"
+        id="recipe-title"
+        placeholder="Enter recipe title"
+        required
+      />
+
+      <label for="recipe-description">Ingredients:</label>
+      <textarea
+        id="recipe-description"
+        placeholder="Flour, cheese, tomatoes..."
+        rows="5"
+        required
+      ></textarea>
+
+      <label for="image">Upload Image:</label>
+      <input type="file" id="image" name="image" accept="image/*" />
+      <!-- <label for="recipe-image">Recipe Image URL:</label>
+            <input type="url" id="recipe-image" placeholder="Enter image URL" required> -->
+      <input type="submit" value="Edit Recipe" />
+    </div>
+  </form>
+</section>
+
+<section className="py-5 service-sec">
+  <div className="container">
+    <div className="row align-items-center">
+      <div className="col-lg-8">
+        <p className="title-p">
+          <img src="imgs/p-img.png" alt="" />Our Creations
+        </p>
+        <h2 className="title-h">Recipe Studio Specials</h2>
+        <p>
+          Explore our carefully crafted recipes, made with love and the freshest
+          ingredients. Perfect meals for every occasion.
+        </p>
+      </div>
+    </div>
+
+    <div className="row mt-5">
+      <div className="col-lg-4 col-md-6">
+        <div className="service-box">
+          <div className="ser-img"><img src="imgs/s-1.png" alt="" /></div>
+          <div className="ser-text">
+            <h4>Combo Pack</h4>
             <p>
-              Fill your kitchen with fresh, wholesome ingredients and simple,
-              nutritious recipes that nourish your body and soul.
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime
+              adipisci error rerum quas, repellat dolore!
             </p>
-            <div class="nav-btn mt-4">
-              <a href="/create"
-                >Start Cooking Today <i class="fa-solid fa-arrow-right"></i
+            <div className="ser-arr">
+              <a href="/catalog"
+                >View full item <i className="fa-solid fa-arrow-right"></i
               ></a>
             </div>
           </div>
         </div>
       </div>
-    </section>
-
-    <!-- about section  -->
-
-    <section class="about-sec py-5">
-      <div class="container">
-        <div class="about row">
-          <div class="col-lg-6 col-md-12">
-            <div class="about-img">
-              <img src="imgs/family.png" alt="" />
-            </div>
-          </div>
-          <div class="col-lg-6 col-md-12">
-            <p class="title-p">About Us</p>
-            <h2 class="title-h">Nurturing Health Through Homemade Cooking</h2>
+      <div className="col-lg-4 col-md-6">
+        <div className="service-box">
+          <div className="ser-img"><img src="imgs/s-2.png" alt="" /></div>
+          <div className="ser-text">
+            <h4>Chicken</h4>
             <p>
-              At Recipe Studio, we believe in the power of homemade food to
-              bring families and friends together while promoting health and
-              wellness. Our mission is to provide simple, nourishing recipes
-              that you can make at home, using fresh ingredients that are good
-              for your body and soul.
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime
+              adipisci error rerum quas, repellat dolore!
             </p>
+            <div className="ser-arr">
+              <a href=""
+                >View full item <i className="fa-solid fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="col-lg-4 col-md-6">
+        <div className="service-box">
+          <div className="ser-img"><img src="imgs/s-3.png" alt="" /></div>
+          <div className="ser-text">
+            <h4>chipotle Chicken</h4>
             <p>
-              We are committed to creating a platform where everyone can find
-              easy-to-follow recipes, whether you're looking for a quick
-              weeknight dinner or a special meal to share with loved ones. Our
-              focus is on quality, authenticity, and supporting healthy
-              lifestyles—one homemade dish at a time!
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime
+              adipisci error rerum quas, repellat dolore!
             </p>
+            <div className="ser-arr">
+              <a href=""
+                >View full item <i className="fa-solid fa-arrow-right"></i
+              ></a>
+            </div>
           </div>
         </div>
       </div>
-    </section>
-
-    <!-- Login -->
-    <section id="login-page" class="auth">
-      <form id="login">
-        <div class="container">
-          <div class="brand-logo"></div>
-          <h1>Sign In</h1>
-          <label for="email">Email:</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="Sokka@gmail.com"
-          />
-          <label for="login-pass">Password:</label>
-          <input type="password" id="login-password" name="password" />
-          <input type="submit" class="btn submit" value="Login" />
-          <p class="field">
-            <span
-              >If you don't have profile click
-              <a href="/register">here</a></span
-            >
-          </p>
-        </div>
-      </form>
-    </section>
-
-    <!-- Register -->
-    <section id="register-page" class="auth">
-      <form id="register">
-        <div class="container">
-          <div class="brand-logo"></div>
-          <h1>Sign Up</h1>
-          <label for="email">Email:</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="maria@email.com"
-          />
-          <label for="pass">Password:</label>
-          <input type="password" name="password" id="register-password" />
-          <label for="con-pass">Confirm Password:</label>
-          <input
-            type="password"
-            name="confirm-password"
-            id="confirm-password"
-          />
-          <input class="btn submit" type="submit" value="Register" />
-          <p class="field">
-            <span
-              >If you already have profile click <a href="/login">here</a></span
-            >
-          </p>
-        </div>
-      </form>
-    </section>
-
-    <!-- Recipe Form -->
-    <section id="recipe-form">
-      <form id="recipe-form-container">
-        <div class="container">
-          <h2>Add Your Recipe</h2>
-          <label for="recipe-title">Recipe Name:</label>
-          <input
-            type="text"
-            id="recipe-title"
-            placeholder="Enter recipe title"
-            required
-          />
-
-          <label for="recipe-description">Ingredients:</label>
-          <textarea
-            id="recipe-description"
-            placeholder="Flour, cheese, tomatoes..."
-            rows="5"
-            required
-          ></textarea>
-
-          <label for="image">Upload Image:</label>
-          <input type="file" id="image" name="image" accept="image/*" />
-          <!-- <label for="recipe-image">Recipe Image URL:</label>
-            <input type="url" id="recipe-image" placeholder="Enter image URL" required> -->
-          <input type="submit" value="Submit Recipe" />
-        </div>
-      </form>
-    </section>
-
-    <!-- Recipe Form -->
-    <section id="edit-form">
-      <form id="edit-form-container">
-        <div class="container">
-          <h2>Edit Your Recipe</h2>
-          <label for="recipe-title">Recipe Name:</label>
-          <input
-            type="text"
-            id="recipe-title"
-            placeholder="Enter recipe title"
-            required
-          />
-
-          <label for="recipe-description">Ingredients:</label>
-          <textarea
-            id="recipe-description"
-            placeholder="Flour, cheese, tomatoes..."
-            rows="5"
-            required
-          ></textarea>
-
-          <label for="image">Upload Image:</label>
-          <input type="file" id="image" name="image" accept="image/*" />
-          <!-- <label for="recipe-image">Recipe Image URL:</label>
-            <input type="url" id="recipe-image" placeholder="Enter image URL" required> -->
-          <input type="submit" value="Edit Recipe" />
-        </div>
-      </form>
-    </section>
-
-    <section class="py-5 service-sec">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-8">
-            <p class="title-p">
-              <img src="imgs/p-img.png" alt="" />Our Creations
-            </p>
-            <h2 class="title-h">Recipe Studio Specials</h2>
+      <div className="col-lg-4 col-md-6">
+        <div className="service-box">
+          <div className="ser-img"><img src="imgs/s-4.png" alt="" /></div>
+          <div className="ser-text">
+            <h4>Tacos</h4>
             <p>
-              Explore our carefully crafted recipes, made with love and the
-              freshest ingredients. Perfect meals for every occasion.
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime
+              adipisci error rerum quas, repellat dolore!
             </p>
-          </div>
-        </div>
-
-        <div class="row mt-5">
-          <div class="col-lg-4 col-md-6">
-            <div class="service-box">
-              <div class="ser-img"><img src="imgs/s-1.png" alt="" /></div>
-              <div class="ser-text">
-                <h4>Combo Pack</h4>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Maxime adipisci error rerum quas, repellat dolore!
-                </p>
-                <div class="ser-arr">
-                  <a href="/catalog"
-                    >View full item <i class="fa-solid fa-arrow-right"></i
-                  ></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="service-box">
-              <div class="ser-img"><img src="imgs/s-2.png" alt="" /></div>
-              <div class="ser-text">
-                <h4>Chicken</h4>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Maxime adipisci error rerum quas, repellat dolore!
-                </p>
-                <div class="ser-arr">
-                  <a href=""
-                    >View full item <i class="fa-solid fa-arrow-right"></i
-                  ></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="service-box">
-              <div class="ser-img"><img src="imgs/s-3.png" alt="" /></div>
-              <div class="ser-text">
-                <h4>chipotle Chicken</h4>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Maxime adipisci error rerum quas, repellat dolore!
-                </p>
-                <div class="ser-arr">
-                  <a href=""
-                    >View full item <i class="fa-solid fa-arrow-right"></i
-                  ></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="service-box">
-              <div class="ser-img"><img src="imgs/s-4.png" alt="" /></div>
-              <div class="ser-text">
-                <h4>Tacos</h4>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Maxime adipisci error rerum quas, repellat dolore!
-                </p>
-                <div class="ser-arr">
-                  <a href=""
-                    >View full item <i class="fa-solid fa-arrow-right"></i
-                  ></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="service-box">
-              <div class="ser-img"><img src="imgs/s-5.png" alt="" /></div>
-              <div class="ser-text">
-                <h4>Pasta</h4>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Maxime adipisci error rerum quas, repellat dolore!
-                </p>
-                <div class="ser-arr">
-                  <a href=""
-                    >View full item <i class="fa-solid fa-arrow-right"></i
-                  ></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="service-box">
-              <div class="ser-img"><img src="imgs/s-6.png" alt="" /></div>
-              <div class="ser-text">
-                <h4>Chicken Tikka</h4>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Maxime adipisci error rerum quas, repellat dolore!
-                </p>
-                <div class="ser-arr">
-                  <a href=""
-                    >View full item <i class="fa-solid fa-arrow-right"></i
-                  ></a>
-                </div>
-              </div>
+            <div className="ser-arr">
+              <a href=""
+                >View full item <i className="fa-solid fa-arrow-right"></i
+              ></a>
             </div>
           </div>
         </div>
       </div>
-    </section>
-
-    <section id="recipe-details">
-      <div class="container">
-        <h2>Recipe Details</h2>
-
-        <div class="recipe-info">
-          <!-- Left side for the image -->
-          <div class="recipe-image">
-            <img src="imgs/s-1.png" alt="Recipe Image" />
-          </div>
-
-          <div class="recipe-description">
-            <div class="recipe-title">
-              <h3 id="recipe-title-display">Combo Pack</h3>
-            </div>
-
-            <h4>Ingredients</h4>
-            <p id="recipe-description-display">
-              Flour, cheese, tomatoes, and other fresh ingredients. Lorem ipsum
-              dolor sit amet consectetur adipisicing elit. Ex nam earum debitis
-              vero minus perferendis voluptatum accusantium nostrum ad adipisci
-              recusandae culpa quibusdam consectetur quis dignissimos,
-              molestiae, blanditiis nisi aliquam. Lorem ipsum dolor sit amet
-              consectetur adipisicing elit. Iste assumenda minima natus fuga
-              optio rem excepturi, ipsam eum vel quia repellendus dicta quisquam
-              reprehenderit nesciunt dolor quasi. Delectus, ducimus impedit.
+      <div className="col-lg-4 col-md-6">
+        <div className="service-box">
+          <div className="ser-img"><img src="imgs/s-5.png" alt="" /></div>
+          <div className="ser-text">
+            <h4>Pasta</h4>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime
+              adipisci error rerum quas, repellat dolore!
             </p>
-
-            <!-- Buttons for edit and delete -->
-            <div class="buttons">
-              <a href="#recipe-form" class="button edit-button">Edit Recipe</a>
-              <button class="button delete-button" onclick="deleteRecipe()">
-                Delete Recipe
-              </button>
+            <div className="ser-arr">
+              <a href=""
+                >View full item <i className="fa-solid fa-arrow-right"></i
+              ></a>
             </div>
           </div>
         </div>
       </div>
-    </section>
-
-    <!-- footer  -->
-
-    <footer class="footer">
-      <div class="container">
-        <div class="footer-content">
-          <p>
-            &copy; 2025. All rights reserved by <a href="#">Recipe Studio</a>
-          </p>
+      <div className="col-lg-4 col-md-6">
+        <div className="service-box">
+          <div className="ser-img"><img src="imgs/s-6.png" alt="" /></div>
+          <div className="ser-text">
+            <h4>Chicken Tikka</h4>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime
+              adipisci error rerum quas, repellat dolore!
+            </p>
+            <div className="ser-arr">
+              <a href=""
+                >View full item <i className="fa-solid fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
         </div>
       </div>
-    </footer>
-  </body>
-</html>
+    </div>
+  </div>
+</section>
+
+<section id="recipe-details">
+  <div className="container">
+    <h2>Recipe Details</h2>
+
+    <div className="recipe-info">
+      <!-- Left side for the image -->
+      <div className="recipe-image">
+        <img src="imgs/s-1.png" alt="Recipe Image" />
+      </div>
+
+      <div className="recipe-description">
+        <div className="recipe-title">
+          <h3 id="recipe-title-display">Combo Pack</h3>
+        </div>
+
+        <h4>Ingredients</h4>
+        <p id="recipe-description-display">
+          Flour, cheese, tomatoes, and other fresh ingredients. Lorem ipsum
+          dolor sit amet consectetur adipisicing elit. Ex nam earum debitis vero
+          minus perferendis voluptatum accusantium nostrum ad adipisci
+          recusandae culpa quibusdam consectetur quis dignissimos, molestiae,
+          blanditiis nisi aliquam. Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Iste assumenda minima natus fuga optio rem
+          excepturi, ipsam eum vel quia repellendus dicta quisquam reprehenderit
+          nesciunt dolor quasi. Delectus, ducimus impedit.
+        </p>
+
+        <!-- Buttons for edit and delete -->
+        <div className="buttons">
+          <a href="#recipe-form" className="button edit-button">Edit Recipe</a>
+          <button className="button delete-button" onclick="deleteRecipe()">
+            Delete Recipe
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- footer  -->
+
+<footer className="footer">
+  <div className="container">
+    <div className="footer-content">
+      <p>&copy; 2025. All rights reserved by <a href="#">Recipe Studio</a></p>
+    </div>
+  </div>
+</footer>
