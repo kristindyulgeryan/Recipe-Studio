@@ -1,7 +1,11 @@
+import Header from "./components/header/Header.jsx";
+import Home from "./components/home/Home.jsx";
+
 function App() {
   return (
     <>
-      <h1>recipe studio</h1>
+      <Header />
+      <Home />
     </>
   );
 }
