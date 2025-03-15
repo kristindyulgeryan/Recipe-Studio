@@ -1,15 +1,17 @@
+import { Link } from "react-router";
+
 export default function Header() {
   return (
     <header className="header">
       <nav className="navbar navbar-expand-lg">
         <div className="container">
-          <a className="navbar-brand logo" href="/">
+          <Link className="navbar-brand logo" to="/">
             <img src="imgs/logo.jpg" alt="logo" />
-          </a>
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
-            data-bs-toggle="collapse"
+            dLinkta-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent"
             aria-expanded="false"
@@ -20,34 +22,34 @@ export default function Header() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link" href="/catalog">
+                <Link className="nav-link" to="/recipes">
                   Recipe Gallery
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/create">
+                <Link className="nav-link" to="/recipes/create">
                   Recipe Factory
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/about">
+                <Link className="nav-link" to="/about">
                   About Us
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/login">
+                <Link className="nav-link" to="/login">
                   Sign In
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="register">
+                <Link className="nav-link" to="register">
                   Sign Up
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/logout">
+                <Link className="nav-link" to="/logout">
                   Sign Out
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
