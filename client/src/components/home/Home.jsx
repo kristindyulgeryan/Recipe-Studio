@@ -1,3 +1,5 @@
+import { Link } from "react-router";
+
 export default function Home() {
   return (
     <section className="banner-sec">
@@ -11,9 +13,9 @@ export default function Home() {
               nutritious recipes that nourish your body and soul.
             </p>
             <div className="nav-btn mt-4">
-              <a href="/create">
+              <Link to="/recipes/create">
                 Start Cooking Today <i className="fa-solid fa-arrow-right"></i>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

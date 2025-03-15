@@ -11,7 +11,7 @@ export default function Header() {
           <button
             className="navbar-toggler"
             type="button"
-            dLinkta-bs-toggle="collapse"
+            data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent"
             aria-expanded="false"

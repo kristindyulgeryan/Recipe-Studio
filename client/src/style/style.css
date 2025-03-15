@@ -290,16 +290,6 @@ footer {
   text-decoration: underline;
 }
 
-@media only screen and (max-width: 991px) {
-  button.navbar-toggler {
-    order: 3;
-  }
-
-  .service-tab {
-    margin-bottom: 25px;
-  }
-}
-
 @media only screen and (max-width: 575px) {
   .banner-sec {
     padding: 60px 0;
@@ -384,8 +374,10 @@ h2.title-h {
   font-size: 38px;
 }
 
+/* recipes gallery */
 .service-sec {
   background: #f1f1f1;
+  margin-bottom: 0;
 }
 
 .service-box {
@@ -419,6 +411,7 @@ h2.title-h {
 /*  Footer */
 footer {
   background-color: var(--secondary-clr);
+  margin-top: 0;
   padding: 15px 0;
   text-align: center;
 }
@@ -438,26 +431,52 @@ footer {
   text-decoration: underline;
 }
 
-/*  some responsive  */
-
 @media only screen and (max-width: 991px) {
   button.navbar-toggler {
     order: 3;
+    background-color: var(--primary-clr); /* Lighten the background */
+    border: 1px solid var(--primary-clr); /* Ensure the border color matches */
+  }
+  button.navbar-toggler .navbar-toggler-icon {
+    background-color: white; /* Set the icon color to white for better visibility */
   }
 
+  /* Optionally, add hover effect to make it more noticeable */
+  button.navbar-toggler:hover {
+    background-color: var(--secondary-clr);
+  }
+
+  button.navbar-toggler:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(191, 147, 67, 0.5); /* Add focus shadow for accessibility */
+  }
   .service-tab {
     margin-bottom: 25px;
   }
 }
 
-/* now for mobile  */
+/*  for mobile  */
 
 @media only screen and (max-width: 575px) {
   .banner-sec {
     padding: 60px 0;
     background-position: center;
+    background-color: var(--primary-clr); /* Lighten the background */
+    border: 1px solid var(--primary-clr); /* Ensure the border color matches */
+  }
+  button.navbar-toggler .navbar-toggler-icon {
+    background-color: white; /* Set the icon color to white for better visibility */
   }
 
+  /* Optionally, add hover effect to make it more noticeable */
+  button.navbar-toggler:hover {
+    background-color: var(--secondary-clr);
+  }
+
+  button.navbar-toggler:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(191, 147, 67, 0.5); /* Add focus shadow for accessibility */
+  }
   .banner-content h2 {
     font-size: 35px;
     width: 64%;
@@ -481,11 +500,9 @@ footer {
   }
 }
 
-/* details style */
 #recipe-details {
   background-color: rgba(244, 244, 244, 0.7); /* Прозрачен сив фон */
   padding: 50px 0;
-  /* background: url('imgs/banner-bg.jpg') no-repeat center center/cover;  */
 }
 
 #recipe-details .container {
@@ -502,7 +519,6 @@ footer {
   margin-bottom: 30px;
 }
 
-/* Приложен glass ефект за recipe-info */
 .recipe-info {
   display: flex;
   flex-wrap: wrap;
