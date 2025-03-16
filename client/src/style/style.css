@@ -12,7 +12,7 @@
 }
 
 body.no-scroll {
-  background: url("imgs/banner-bg.jpg") no-repeat center center/cover;
+  background: url("/imgs/banner-bg.jpg") no-repeat center center/cover;
   background-attachment: fixed;
   min-height: 100vh;
 }
@@ -397,6 +397,10 @@ h2.title-h {
 }
 
 .ser-img img {
+  width: 130px; /* Fixed width */
+  height: 130px; /* Fixed height */
+  border-radius: 50%; /* Circle shape */
+  object-fit: cover; /* Ensures the image covers the area without distortion */
   margin-bottom: -82px;
 }
 
