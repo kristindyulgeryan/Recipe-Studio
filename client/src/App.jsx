@@ -8,6 +8,7 @@ import RecipeGallery from "./components/recipe-gallery/RecipeGallery.jsx";
 import RecipeCreate from "./components/recipe-create/RecipeCreate.jsx";
 import Footer from "./components/footer/Footer.jsx";
 import About from "./components/about/About.jsx";
+import "./style/style.css";
 
 function App() {
   return (
