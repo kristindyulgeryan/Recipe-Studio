@@ -8,18 +8,11 @@ export default {
     const recipes = Object.values(result);
     return recipes;
   },
+  getOne(recipeId) {
+    return request.get(`${baseUrl}/${recipeId}`);
+
+  },
   async create(newRecipe) {
     return request.post(baseUrl, newRecipe);
-  },
+  }
 };
-
-// const response = await fetch(baseUrl, {
-//   method: "POST",
-//   headers: {
-//     "Content-Type": "application/json",
-//   },
-//   body: JSON.stringify(newRecipe),
-// });
-
-// const result = await response.json();
-// console.log(result);

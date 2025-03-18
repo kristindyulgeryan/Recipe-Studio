@@ -44,7 +44,7 @@ export default function RecipeGallery() {
                     <h4>{recipe.title}</h4>
                     <p>{recipe.description.length > 100 ? `${recipe.description.slice(0, 100)}...` : recipe.description}</p>
                     <div className="ser-arr">
-                      <Link to={`/recipes/details/${recipe._id}`}>
+                      <Link to={`/recipes/${recipe._id}/details`}>
                         View full item
                         <i className="fa-solid fa-arrow-right"></i>
                       </Link>
@@ -54,7 +54,7 @@ export default function RecipeGallery() {
               </div>
             ))
           ) : (
-            <p>No recipes available.</p>
+            <h3>No recipes available.</h3>
           )}
         </div>
       </div>

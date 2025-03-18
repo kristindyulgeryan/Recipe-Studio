@@ -8,7 +8,9 @@ import RecipeGallery from "./components/recipe-gallery/RecipeGallery.jsx";
 import RecipeCreate from "./components/recipe-create/RecipeCreate.jsx";
 import Footer from "./components/footer/Footer.jsx";
 import About from "./components/about/About.jsx";
+import RecipeDetails from "./components/recipe-details/RecipeDetails.jsx";
 import "./style/style.css";
+
 
 function App() {
   return (
@@ -20,6 +22,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/recipes" element={<RecipeGallery />} />
         <Route path="/recipes/create" element={<RecipeCreate />} />
+        <Route path="/recipes/:recipeId/details" element={<RecipeDetails />} />
         <Route path="/about" element={<About />} />
       </Routes>
       <Footer />
