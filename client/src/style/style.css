@@ -411,6 +411,13 @@ h2.title-h {
   background-color: var(--secondary-clr);
 }
 
+.comment-count {
+  font-size: 14px;
+  color: #666;  /* По-светъл цвят за текст */
+  font-weight: 600;
+  margin-left: 100px;  /* Разстояние между линка и броя на коментарите */
+}
+
 
 /*  Footer */
 footer {

@@ -45,9 +45,14 @@ export default function RecipeGallery() {
                     <p>{recipe.description.length > 100 ? `${recipe.description.slice(0, 100)}...` : recipe.description}</p>
                     <div className="ser-arr">
                       <Link to={`/recipes/${recipe._id}/details`}>
-                        View full item
-                        <i className="fa-solid fa-arrow-right"></i>
+                      Discover Recipe
+                        
                       </Link>
+                  {/* Comments count */}
+                   <span className="comment-count">
+                       0 Comments
+                   </span>
+
                     </div>
                   </div>
                 </div>
