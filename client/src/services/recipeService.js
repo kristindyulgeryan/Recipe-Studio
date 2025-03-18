@@ -14,5 +14,8 @@ export default {
   },
   async create(newRecipe) {
     return request.post(baseUrl, newRecipe);
+  },
+  delete(recipeId) {
+    return request.delete(`${baseUrl}/${recipeId}`);
   }
 };

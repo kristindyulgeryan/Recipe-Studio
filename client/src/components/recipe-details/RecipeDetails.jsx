@@ -1,8 +1,9 @@
 import {  useEffect, useState } from "react";
-import { Link, useParams } from "react-router";
+import { Link, useNavigate, useParams } from "react-router";
 import recipeService from "../../services/recipeService.js";
 
 export default function RecipeDetails() {
+  const navigate = useNavigate();
  const {recipeId}=useParams();
  const[recipe, setRecipe]=useState({});
 
@@ -11,6 +12,17 @@ export default function RecipeDetails() {
   recipeService.getOne(recipeId).then(setRecipe)
  },[recipeId]);
 
+
+ const recipeDeleteClickHandler= async()=>{
+   const hasConfirm = confirm(`Are you sure you want to delete this ${recipe.title} recipe?`);
+ 
+if(!hasConfirm){
+  return
+}
+
+await recipeService.delete(recipeId);
+navigate("/recipes");
+  }
 
   return (
     <section id="recipe-details">
@@ -38,13 +50,15 @@ export default function RecipeDetails() {
               <Link to="#" className="button edit-button">
                 Edit Recipe
               </Link>
-              <button className="button delete-button" onclick="deleteRecipe()">
+              <button className="button delete-button" onClick={recipeDeleteClickHandler}>
                 Delete Recipe
               </button>
             </div>
           </div>
- {/* Comments Section (Before Edit and Delete Buttons) */}
- <div className="comments-section">
+
+
+            {/* Comments Section (Before Edit and Delete Buttons) */}
+          <div className="comments-section">
           <h4>Comments</h4>
           <div className="comment">
             <p><strong>John Doe:</strong> This recipe is amazing! I tried it last night, and it was so delicious.</p>
