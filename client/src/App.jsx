@@ -10,7 +10,7 @@ import Footer from "./components/footer/Footer.jsx";
 import About from "./components/about/About.jsx";
 import RecipeDetails from "./components/recipe-details/RecipeDetails.jsx";
 import "./style/style.css";
-
+import RecipeEdit from "./components/recipe-edit/RecipeEdit.jsx";
 
 function App() {
   return (
@@ -23,6 +23,7 @@ function App() {
         <Route path="/recipes" element={<RecipeGallery />} />
         <Route path="/recipes/create" element={<RecipeCreate />} />
         <Route path="/recipes/:recipeId/details" element={<RecipeDetails />} />
+        <Route path="/recipes/:recipeId/edit" element={<RecipeEdit />} />
         <Route path="/about" element={<About />} />
       </Routes>
       <Footer />

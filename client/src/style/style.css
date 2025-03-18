@@ -5,27 +5,22 @@
   --secondary-clr: #1a1a1a;
 }
 
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-
-
 body.no-scroll {
   background: url("/imgs/banner-bg.jpg") no-repeat center center/cover;
   background-attachment: fixed;
-  
 }
-
 
 section {
   background: url("imgs/banner-bg.jpg") no-repeat center center/cover;
   background-attachment: fixed;
   padding: 20px;
-  min-height: calc(100vh - 50px) /* Пълно запълване на екрана */
+  min-height: calc(100vh - 50px); /* Пълно запълване на екрана */
 }
 
 li {
@@ -132,7 +127,6 @@ img {
   align-items: center;
   height: 100vh;
   padding: 0 15px;
-  
 }
 
 #recipe-form-container,
@@ -145,7 +139,6 @@ img {
   width: 100%;
   max-width: 700px;
   border: 1px solid rgba(255, 255, 255, 0.2);
- 
 }
 
 /* Form Inputs */
@@ -213,7 +206,6 @@ img {
   align-items: center;
   height: 100vh;
   padding: 0 15px;
-
 }
 
 #login,
@@ -276,10 +268,6 @@ input[type="submit"].submit:hover {
   text-decoration: underline;
 }
 
-
-
-
-
 .banner-sec {
   position: relative;
   padding: 160px 0;
@@ -300,14 +288,12 @@ input[type="submit"].submit:hover {
   color: white;
 }
 
-
 .about {
   background-color: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(10px);
 
   padding: 50px 0;
 }
- 
 
 .about-sec .title-p {
   font-size: 38px;
@@ -338,7 +324,6 @@ h2.title-h {
   color: var(--secondary-clr);
   font-size: 38px;
 }
-
 
 /* recipes gallery */
 
@@ -413,22 +398,21 @@ h2.title-h {
 
 .comment-count {
   font-size: 14px;
-  color: #666;  /* По-светъл цвят за текст */
+  color: #666; /* По-светъл цвят за текст */
   font-weight: 600;
-  margin-left: 100px;  /* Разстояние между линка и броя на коментарите */
+  margin-left: 100px; /* Разстояние между линка и броя на коментарите */
 }
-
 
 /*  Footer */
 footer {
   background-color: var(--secondary-clr);
   padding: 15px 0;
   text-align: center;
-  position: fixed; 
+  position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
-  z-index: 10; 
+  z-index: 10;
 }
 
 .footer-content p {
@@ -446,19 +430,15 @@ footer {
   text-decoration: underline;
 }
 
-
-
-
 @media only screen and (max-width: 991px) {
   button.navbar-toggler {
     order: 3;
-    background-color: var(--primary-clr); 
-    border: 1px solid var(--primary-clr); 
+    background-color: var(--primary-clr);
+    border: 1px solid var(--primary-clr);
   }
   button.navbar-toggler .navbar-toggler-icon {
-    background-color: var(--primary-clr); 
+    background-color: var(--primary-clr);
   }
-
 
   button.navbar-toggler:hover {
     background-color: var(--secondary-clr);
@@ -466,7 +446,7 @@ footer {
 
   button.navbar-toggler:focus {
     outline: none;
-    box-shadow: 0 0 0 0.2rem rgba(191, 147, 67, 0.5); 
+    box-shadow: 0 0 0 0.2rem rgba(191, 147, 67, 0.5);
   }
   .service-tab {
     margin-bottom: 25px;
@@ -479,21 +459,20 @@ footer {
   .banner-sec {
     padding: 60px 0;
     background-position: center;
-    background-color: var(--primary-clr); 
-    border: 1px solid var(--primary-clr); 
+    background-color: var(--primary-clr);
+    border: 1px solid var(--primary-clr);
   }
   button.navbar-toggler .navbar-toggler-icon {
-    background-color: white; 
+    background-color: var(--primary-clr);
   }
 
-  
   button.navbar-toggler:hover {
     background-color: var(--secondary-clr);
   }
 
   button.navbar-toggler:focus {
     outline: none;
-    box-shadow: 0 0 0 0.2rem rgba(191, 147, 67, 0.5); 
+    box-shadow: 0 0 0 0.2rem rgba(191, 147, 67, 0.5);
   }
   .banner-content h2 {
     font-size: 35px;
@@ -518,9 +497,7 @@ footer {
   }
 }
 
-
 #recipe-details {
- 
   padding: 50px 0;
 }
 
@@ -552,7 +529,7 @@ footer {
 }
 
 .comments-section {
-  flex: 0 0 100%;  /* Allow comments to take full width */
+  flex: 0 0 100%;
   margin-top: 20px;
   margin-bottom: 20px;
   text-align: left;
@@ -561,14 +538,14 @@ footer {
 }
 
 .comment {
-  background-color: rgba(0, 0, 0, 0.3); 
+  background-color: rgba(0, 0, 0, 0.3);
   padding: 10px;
   border-radius: 8px;
   margin-bottom: 50px;
 }
 
 .comment p {
-  color: #fff; 
+  color: #fff;
   font-size: 14px;
   line-height: 1.6;
 }
@@ -586,8 +563,6 @@ footer {
   font-size: 28px;
   margin-bottom: 10px;
 }
-
-
 
 .recipe-image {
   flex: 0 0 40%;
@@ -608,7 +583,6 @@ footer {
   flex: 0 0 55%;
   text-align: left;
   padding-bottom: 100px; /* Create space for buttons */
-  
 }
 
 .recipe-description h4 {
@@ -616,7 +590,6 @@ footer {
   color: #fff;
   font-size: 22px;
   margin-bottom: 15px;
-  
 }
 
 .recipe-description p {
@@ -639,7 +612,6 @@ footer {
   right: 30px;
   z-index: 10;
   margin-top: 20px;
- 
 }
 
 .buttons .button {
@@ -666,7 +638,6 @@ footer {
   background-color: #1a1a1a;
   transform: scale(1.05);
 }
-
 
 /* Add Comment Section */
 .add-comment-section {

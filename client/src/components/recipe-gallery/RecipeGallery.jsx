@@ -9,7 +9,6 @@ export default function RecipeGallery() {
     recipeService
       .getAll()
       .then(setRecipes)
-
       .catch((error) => {
         console.error("Error fetching recipes:", error);
       });
@@ -38,21 +37,20 @@ export default function RecipeGallery() {
               <div key={recipe._id} className="col-lg-4 col-md-6">
                 <div className="service-box">
                   <div className="ser-img">
-                    <img src={recipe.image} alt={recipe.title}/>
+                    <img src={recipe.image} alt={recipe.title} />
                   </div>
                   <div className="ser-text">
                     <h4>{recipe.title}</h4>
-                    <p>{recipe.description.length > 100 ? `${recipe.description.slice(0, 100)}...` : recipe.description}</p>
+                    <p>
+                      {recipe.description && recipe.description.length > 100
+                        ? `${recipe.description.slice(0, 100)}...`
+                        : recipe.description || "No description available."}
+                    </p>
                     <div className="ser-arr">
                       <Link to={`/recipes/${recipe._id}/details`}>
-                      Discover Recipe
-                        
+                        Discover Recipe
                       </Link>
-                  {/* Comments count */}
-                   <span className="comment-count">
-                       0 Comments
-                   </span>
-
+                      <span className="comment-count">0 Comments</span>
                     </div>
                   </div>
                 </div>

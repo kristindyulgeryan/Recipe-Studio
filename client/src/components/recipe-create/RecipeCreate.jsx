@@ -1,52 +1,18 @@
-import { useState } from "react";
 import { useNavigate } from "react-router";
 import recipeService from "../../services/recipeService.js";
-import { compressImage } from "../../utils/compressImage.js"; 
 
 export default function RecipeCreate() {
   const navigate = useNavigate();
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
-  const [image, setImage] = useState(null);
-
-  const handleImageChange = (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      setImage(file);
-    }
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (!image) return; 
-
-    try {
-      const compressedBlob = await compressImage(image);
-
-      const toBase64 = (blob) =>
-        new Promise((resolve, reject) => {
-          const reader = new FileReader();
-          reader.readAsDataURL(blob);
-          reader.onload = () => resolve(reader.result);
-          reader.onerror = (error) => reject(error);
-        });
-
-      const base64Image = await toBase64(compressedBlob); 
-
-      const newRecipe = { title, description, image: base64Image };
-
-      await recipeService.create(newRecipe);
-      console.log("Recipe created successfully!");
-    } catch (error) {
-      console.error("Error processing image:", error);
-    }
-
+  const submitAction = async (formData) => {
+    const recipeData = Object.fromEntries(formData);
+    const result = await recipeService.create(recipeData);
+    console.log(result);
     navigate("/recipes");
   };
 
   return (
     <section id="recipe-form">
-      <form id="recipe-form-container" onSubmit={handleSubmit}>
+      <form id="recipe-form-container" action={submitAction}>
         <div className="container">
           <h2>Add Your Recipe</h2>
 
@@ -55,8 +21,7 @@ export default function RecipeCreate() {
             type="text"
             id="recipe-title"
             placeholder="Enter recipe title"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
+            name="title"
             required
           />
 
@@ -65,19 +30,12 @@ export default function RecipeCreate() {
             id="recipe-description"
             placeholder="Flour, cheese, tomatoes..."
             rows="5"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
+            name="description"
             required
           ></textarea>
 
           <label htmlFor="image">Upload Image:</label>
-          <input
-            type="file"
-            id="image"
-            name="image"
-            accept="image/*"
-            onChange={handleImageChange} 
-          />
+          <input type="text" id="image" name="image" />
 
           <input type="submit" value="Submit Recipe" />
         </div>

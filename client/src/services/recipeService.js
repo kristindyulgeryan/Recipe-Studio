@@ -10,12 +10,17 @@ export default {
   },
   getOne(recipeId) {
     return request.get(`${baseUrl}/${recipeId}`);
-
   },
   async create(newRecipe) {
     return request.post(baseUrl, newRecipe);
   },
+  edit(recipeId, recipeData) {
+    return request.put(`${baseUrl}/${recipeId}`, {
+      ...recipeData,
+      _id: recipeId,
+    });
+  },
   delete(recipeId) {
     return request.delete(`${baseUrl}/${recipeId}`);
-  }
+  },
 };
