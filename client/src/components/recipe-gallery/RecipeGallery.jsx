@@ -38,14 +38,14 @@ export default function RecipeGallery() {
               <div key={recipe._id} className="col-lg-4 col-md-6">
                 <div className="service-box">
                   <div className="ser-img">
-                    <img src={recipe.image} alt={recipe.title} />
+                    <img src={recipe.image} alt={recipe.title}/>
                   </div>
                   <div className="ser-text">
                     <h4>{recipe.title}</h4>
-                    <p>{recipe.description}</p>
+                    <p>{recipe.description.length > 100 ? `${recipe.description.slice(0, 100)}...` : recipe.description}</p>
                     <div className="ser-arr">
                       <Link to={`/recipes/details/${recipe._id}`}>
-                        View full item{" "}
+                        View full item
                         <i className="fa-solid fa-arrow-right"></i>
                       </Link>
                     </div>

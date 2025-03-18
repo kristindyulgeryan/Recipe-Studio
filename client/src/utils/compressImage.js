@@ -1,35 +1,56 @@
-export const compressImage = (file) => {
-  return new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = (event) => {
-      const img = new Image();
-      img.src = event.target.result;
-      img.onload = () => {
-        const canvas = document.createElement("canvas");
-        const ctx = canvas.getContext("2d");
+// import imageCompression from "browser-image-compression";
 
-        const MAX_WIDTH = 50;
-        const scaleSize = MAX_WIDTH / img.width;
-        canvas.width = MAX_WIDTH;
-        canvas.height = img.height * scaleSize;
+// export const compressImage = async (file) => {
+//   const options = {
+//     maxSizeMB: 0.01, 
+//     maxWidthOrHeight: 30, 
+//     useWebWorker: true, 
+//   };
 
-        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+//   try {
+//     const compressedFile = await imageCompression(file, options);
+//     return compressedFile;
+//   } catch (error) {
+//     console.error("Image compression failed:", error);
+//     throw error;
+//   }
+// };
 
-        // Преобразуваме в Blob и връщаме Promise
-        canvas.toBlob(
-          (blob) => {
-            if (blob) {
-              resolve(blob); // Връща Blob като Promise
-            } else {
-              reject(new Error("Failed to compress image"));
-            }
-          },
-          "image/jpeg",
-          0.6 // 60% качество
-        );
-      };
-    };
-    reader.onerror = (error) => reject(error);
+
+import Resizer from "react-image-file-resizer";
+
+const resizeFile = (file) =>
+  new Promise((resolve) => {
+    Resizer.imageFileResizer(
+      file,
+      100, // Desired width
+      100, // Desired height
+      "JPEG", // Image format
+      50, // Quality (try lowering this for more compression)
+      0, // Rotation
+      (uri) => {
+        resolve(uri);
+      },
+      "base64"
+    );
   });
+
+export const compressImage = async (file) => {
+  try {
+    // Resize image using Resizer
+    const resizedFile = await resizeFile(file);
+
+    // Convert the resized file (Base64) into a Blob (we need this to get the file size)
+    const resizedBlob = await fetch(resizedFile).then((res) => res.blob());
+
+    // Check the size of the file after resizing
+    if (resizedBlob.size > 10 * 1024) { // 20 KB
+      alert("Image is still too large, try with lower quality or smaller dimensions");
+    }
+
+    return resizedBlob; // Return the resized (and potentially compressed) image
+  } catch (error) {
+    console.error("Error in image resizing/compression:", error);
+    throw error;
+  }
 };
