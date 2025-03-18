@@ -5,23 +5,27 @@
   --secondary-clr: #1a1a1a;
 }
 
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+
+
 body.no-scroll {
   background: url("/imgs/banner-bg.jpg") no-repeat center center/cover;
   background-attachment: fixed;
-  min-height: 100vh;
+  
 }
+
 
 section {
   background: url("imgs/banner-bg.jpg") no-repeat center center/cover;
   background-attachment: fixed;
   padding: 20px;
-  min-height: 100vh; /* Пълно запълване на екрана */
+  min-height: calc(100vh - 50px) /* Пълно запълване на екрана */
 }
 
 li {
@@ -123,10 +127,12 @@ img {
 #recipe-form,
 #edit-form {
   display: flex;
+
   justify-content: center;
   align-items: center;
   height: 100vh;
   padding: 0 15px;
+  
 }
 
 #recipe-form-container,
@@ -139,6 +145,7 @@ img {
   width: 100%;
   max-width: 700px;
   border: 1px solid rgba(255, 255, 255, 0.2);
+ 
 }
 
 /* Form Inputs */
@@ -206,6 +213,7 @@ img {
   align-items: center;
   height: 100vh;
   padding: 0 15px;
+
 }
 
 #login,
@@ -268,56 +276,9 @@ input[type="submit"].submit:hover {
   text-decoration: underline;
 }
 
-footer {
-  background-color: var(--secondary-clr);
-  padding: 15px 0;
-  text-align: center;
-  margin-top: 50px;
-}
 
-.footer-content p {
-  color: white;
-  font-size: 14px;
-}
 
-.footer-content a {
-  color: var(--primary-clr);
-  font-weight: 600;
-  text-decoration: none;
-}
 
-.footer-content a:hover {
-  text-decoration: underline;
-}
-
-@media only screen and (max-width: 575px) {
-  .banner-sec {
-    padding: 60px 0;
-    background-position: center;
-  }
-
-  .banner-content h2 {
-    font-size: 35px;
-    width: 64%;
-  }
-
-  .banner-content p {
-    display: none;
-  }
-
-  h2.title-h {
-    font-size: 28px;
-  }
-
-  .nav-btn.float-end {
-    float: left !important;
-  }
-
-  .nav-tabs {
-    margin-bottom: 20px;
-    gap: 10px;
-  }
-}
 
 .banner-sec {
   position: relative;
@@ -339,10 +300,14 @@ footer {
   color: white;
 }
 
+
 .about {
   background-color: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(10px);
+
+  padding: 50px 0;
 }
+ 
 
 .about-sec .title-p {
   font-size: 38px;
@@ -350,7 +315,7 @@ footer {
 }
 
 .about-img img {
-  width: 85%;
+  width: 100%;
 }
 
 p.title-p {
@@ -374,7 +339,9 @@ h2.title-h {
   font-size: 38px;
 }
 
+
 /* recipes gallery */
+
 .service-sec {
   background: #f1f1f1;
   margin-bottom: 0;
@@ -382,26 +349,51 @@ h2.title-h {
 
 .service-box {
   width: 96%;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  min-height: 350px; /* Keeps the box from collapsing */
+  position: relative; /* Allows the image to overlap the text */
   margin-bottom: 40px;
 }
 
 .ser-img {
   width: 130px;
-  margin: auto;
-}
-
-.ser-text {
-  padding: 100px 30px 30px 30px;
-  background-color: white;
-  border-radius: 0px 57px 0 0;
+  height: 130px;
+  margin-top: 10;
+  position: absolute;
+  top: -55px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  border-radius: 50%;
+  overflow: hidden;
 }
 
 .ser-img img {
-  width: 130px; /* Fixed width */
-  height: 130px; /* Fixed height */
-  border-radius: 50%; /* Circle shape */
-  object-fit: cover; /* Ensures the image covers the area without distortion */
-  margin-bottom: -82px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.ser-text {
+  padding: 80px 30px 30px 30px;
+  background-color: white;
+  border-radius: 0px 57px 0 0;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  z-index: 0;
+}
+.service-box .ser-text p {
+  max-height: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.7;
+  box-sizing: border-box;
+  padding: 10px 0;
+  margin-bottom: 10px;
 }
 
 .ser-arr a {
@@ -410,14 +402,28 @@ h2.title-h {
   padding: 8px 20px;
   border-radius: 6px;
   margin-top: 10px;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
 }
+
+.ser-arr a:hover {
+  background-color: var(--secondary-clr);
+}
+
+
+
 
 /*  Footer */
 footer {
   background-color: var(--secondary-clr);
-  margin-top: 0;
   padding: 15px 0;
   text-align: center;
+  position: fixed; 
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10; 
 }
 
 .footer-content p {
@@ -435,24 +441,27 @@ footer {
   text-decoration: underline;
 }
 
+
+
+
 @media only screen and (max-width: 991px) {
   button.navbar-toggler {
     order: 3;
-    background-color: var(--primary-clr); /* Lighten the background */
-    border: 1px solid var(--primary-clr); /* Ensure the border color matches */
+    background-color: var(--primary-clr); 
+    border: 1px solid var(--primary-clr); 
   }
   button.navbar-toggler .navbar-toggler-icon {
-    background-color: white; /* Set the icon color to white for better visibility */
+    background-color: var(--primary-clr); 
   }
 
-  /* Optionally, add hover effect to make it more noticeable */
+
   button.navbar-toggler:hover {
     background-color: var(--secondary-clr);
   }
 
   button.navbar-toggler:focus {
     outline: none;
-    box-shadow: 0 0 0 0.2rem rgba(191, 147, 67, 0.5); /* Add focus shadow for accessibility */
+    box-shadow: 0 0 0 0.2rem rgba(191, 147, 67, 0.5); 
   }
   .service-tab {
     margin-bottom: 25px;
@@ -465,21 +474,21 @@ footer {
   .banner-sec {
     padding: 60px 0;
     background-position: center;
-    background-color: var(--primary-clr); /* Lighten the background */
-    border: 1px solid var(--primary-clr); /* Ensure the border color matches */
+    background-color: var(--primary-clr); 
+    border: 1px solid var(--primary-clr); 
   }
   button.navbar-toggler .navbar-toggler-icon {
-    background-color: white; /* Set the icon color to white for better visibility */
+    background-color: white; 
   }
 
-  /* Optionally, add hover effect to make it more noticeable */
+  
   button.navbar-toggler:hover {
     background-color: var(--secondary-clr);
   }
 
   button.navbar-toggler:focus {
     outline: none;
-    box-shadow: 0 0 0 0.2rem rgba(191, 147, 67, 0.5); /* Add focus shadow for accessibility */
+    box-shadow: 0 0 0 0.2rem rgba(191, 147, 67, 0.5); 
   }
   .banner-content h2 {
     font-size: 35px;
@@ -504,8 +513,9 @@ footer {
   }
 }
 
+
 #recipe-details {
-  background-color: rgba(244, 244, 244, 0.7); /* Прозрачен сив фон */
+  background-color: rgba(244, 244, 244, 0.7); 
   padding: 50px 0;
 }
 
