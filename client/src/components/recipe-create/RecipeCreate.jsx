@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { Navigate, useNavigate } from "react-router";
+import { useNavigate } from "react-router";
 import recipeService from "../../services/recipeService.js";
-import { compressImage } from "../../utils/compressImage.js"; // Импорт на компресията
+import { compressImage } from "../../utils/compressImage.js"; 
 
 export default function RecipeCreate() {
   const navigate = useNavigate();
@@ -18,7 +18,7 @@ export default function RecipeCreate() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!image) return; // Проверка за празно изображение
+    if (!image) return; 
 
     try {
       const compressedBlob = await compressImage(image);
@@ -31,7 +31,7 @@ export default function RecipeCreate() {
           reader.onerror = (error) => reject(error);
         });
 
-      const base64Image = await toBase64(compressedBlob); // Сега ще работи правилно
+      const base64Image = await toBase64(compressedBlob); 
 
       const newRecipe = { title, description, image: base64Image };
 
@@ -76,7 +76,7 @@ export default function RecipeCreate() {
             id="image"
             name="image"
             accept="image/*"
-            onChange={handleImageChange} // Използвай onChange за обработка на снимката
+            onChange={handleImageChange} 
           />
 
           <input type="submit" value="Submit Recipe" />

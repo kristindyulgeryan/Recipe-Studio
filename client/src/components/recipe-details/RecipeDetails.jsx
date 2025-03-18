@@ -16,9 +16,7 @@ export default function RecipeDetails() {
 
             <h4>Ingredients</h4>
             <p id="recipe-description-display">
-              Flour, cheese, tomatoes, and other fresh ingredients. Lorem ipsum
-              dolor sit amet consectetur adipisicing elit. Ex nam earum debitis
-              vero minus perferendis voluptatum accusantium nostrum ad adipisci.
+              
             </p>
 
             {/* Buttons for edit and delete  */}
