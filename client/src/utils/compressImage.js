@@ -23,10 +23,10 @@ const resizeFile = (file) =>
   new Promise((resolve) => {
     Resizer.imageFileResizer(
       file,
-      100, 
-      100, 
-      "JPEG", 
-      80, // Quality (try lowering this for more compression)
+      150, 
+      150, 
+      "WEBP", 
+      40, // Quality (try lowering this for more compression)
       0, // Rotation
       (uri) => {
         resolve(uri);
@@ -44,7 +44,7 @@ export const compressImage = async (file) => {
     const resizedBlob = await fetch(resizedFile).then((res) => res.blob());
 
     // Check the size of the file after resizing
-    if (resizedBlob.size > 10 * 1024) { // 20 KB
+    if (resizedBlob.size > 20 * 1024) { // 20 KB
       alert("Image is still too large, try with lower quality or smaller dimensions");
     }
 
@@ -53,4 +53,5 @@ export const compressImage = async (file) => {
     console.error("Error in image resizing/compression:", error);
     throw error;
   }
+  
 };
