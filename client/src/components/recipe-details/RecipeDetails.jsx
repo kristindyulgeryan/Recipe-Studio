@@ -39,7 +39,7 @@ export default function RecipeDetails() {
               <h3 id="recipe-title-display">{recipe.title}</h3>
             </div>
 
-            <h4>Ingredients</h4>
+            <h4>Ingredients & Preparation:</h4>
             <p id="recipe-description-display">{recipe.description}</p>
 
             {/* Buttons for edit and delete  */}

@@ -25,7 +25,7 @@ export default function RecipeCreate() {
             required
           />
 
-          <label htmlFor="recipe-description">Ingredients:</label>
+          <label htmlFor="recipe-description">Ingredients & Preparation:</label>
           <textarea
             id="recipe-description"
             placeholder="Flour, cheese, tomatoes..."

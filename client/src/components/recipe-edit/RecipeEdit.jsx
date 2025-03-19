@@ -26,14 +26,16 @@ export default function RecipeEdit() {
           <input
             type="text"
             id="recipe-title"
+            name="title"
             placeholder="Enter recipe title"
             defaultValue={recipe.title}
             required
           />
 
-          <label htmlFor="recipe-description">Ingredients:</label>
+          <label htmlFor="recipe-description">Ingredients & Preparation:</label>
           <textarea
             id="recipe-description"
+            name="description"
             placeholder="Flour, cheese, tomatoes..."
             rows="5"
             defaultValue={recipe.description}

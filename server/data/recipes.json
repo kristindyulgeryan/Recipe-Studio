@@ -1,1 +1,32 @@
-{}
+{
+    "0aeed30a-89f3-4a0c-b2fd-6f87d05d01db": {
+        "title": "Chicken Crispy fingers",
+        "description": "Cut chicken into strips, season with salt, pepper, and garlic powder. Dredge in flour, dip in beaten eggs, then coat with breadcrumbs or panko. Fry in hot oil (350°F) until golden brown and crispy, about 5-7 minutes. Drain on paper towels and serve with your favorite dipping sauce. Enjoy!",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNFmj_RShviMmKOyi25kcJTCV8aPbtBQmx5N_Iy_OJNjQykhUtqTTRB461SxuyraLwV6RBe6oTAJK2vPGnuiikBOuzqGtyG2rk18rEOg",
+        "_id": "0aeed30a-89f3-4a0c-b2fd-6f87d05d01db"
+    },
+    "1b86aabc-21fa-4569-bc6c-d66fe9ee3178": {
+        "title": "Spaghetti Bolognese",
+        "description": "Prepare the base: Heat olive oil in a large pan over medium heat. Add the chopped onion, garlic, and carrot. Sauté for about 5 minutes until softened.\nCook the meat: Add the ground beef, breaking it apart with a spoon. Cook until browned and no longer pink.\nAdd tomato flavor: Stir in the tomato paste and cook for 1-2 minutes to deepen the flavor.\nSimmer the sauce: Pour in the crushed tomatoes and beef broth (or red wine). Add oregano, basil, salt, pepper, and sugar (if using). Stir well and let simmer for at least 30 minutes, stirring occasionally.\nCook the spaghetti: While the sauce simmers, bring a large pot of salted water to a boil. Cook the spaghetti according to package instructions until al dente. Drain and set aside.\nCombine and serve: Toss the spaghetti with the Bolognese sauce or serve the sauce on top. Garnish with Parmesan cheese and fresh basil.",
+        "image": "https://images.immediate.co.uk/production/volatile/sites/30/2013/05/Puttanesca-fd5810c.jpg?quality=90&webp=true&resize=300,272",
+        "_id": "1b86aabc-21fa-4569-bc6c-d66fe9ee3178"
+    },
+    "c623ff1d-4994-4540-8951-82bd1e9eed07": {
+        "title": "New York Cheesecake",
+        "description": "Prepare the crust:\nPreheat oven to 160°C (320°F).\nMix crushed biscuits with melted butter and sugar.\nPress the mixture firmly into the bottom of a springform pan.\nBake for 10 minutes, then let it cool.\nMake the filling:\nIn a large bowl, beat the cream cheese until smooth.\nAdd sugar and mix well.\nAdd eggs one at a time, mixing gently after each.\nStir in vanilla, heavy cream (or sour cream), and cornstarch (if using).\nBake the cheesecake:\nPour the filling over the crust.\nBake in a water bath (place the pan in a larger pan filled with hot water) at 160°C (320°F) for 50-60 minutes, or until the center is slightly wobbly.\nTurn off the oven and let the cheesecake cool inside for 1 hour.\nChill and serve:\nRefrigerate for at least 4 hours (preferably overnight).\nTop with fruit, caramel, or chocolate sauce before serving.",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDYB7V8qbyHItrjWfssGg64MrFbrXTkutmVw&s",
+        "_id": "c623ff1d-4994-4540-8951-82bd1e9eed07"
+    },
+    "ad99eeb2-4b97-4d75-821e-0ee406286ccb": {
+        "title": "Whole Wheat Bread",
+        "description": "Mix Ingredients:\nIn a large bowl, combine whole wheat flour, salt, and baking powder (if using).\nAdd warm water and olive oil.\nMix until a rough dough forms.\nKnead the Dough:\nTransfer to a floured surface and knead for about 5-7 minutes until smooth.\nIf sticky, add a little more flour; if dry, add a teaspoon of water at a time.\nRest the Dough:\nCover with a damp cloth and let it rest for 30 minutes to improve elasticity.\nUse as Needed:\n",
+        "image": "https://gourmetdoneskinny.com/wp-content/uploads/2021/04/Stone-Ground-Bread-final-1200.jpg",
+        "_id": "ad99eeb2-4b97-4d75-821e-0ee406286ccb"
+    },
+    "559a1721-9f1b-4f49-9ab1-e177060fb33f": {
+        "title": "Spicy Smashed Broccoli",
+        "description": "4-8 cups broccoli florets\n1/2-1 tablespoon Casa M Texas Twister or Chain Reaction\n1-2 tablespoons olive oil or use olive oil sprayer for best results\n1/4 cup Parmesan Cheese\nkosher salt to taste if desired\nPreheat air fryer to 400°. (Or you can also use an oven – but not as crispy)\nTo make this super easy I steam the broccoli first in an Instant Pot (but you can also boil water, place broccoli in steamer basket and steam it for about 3 minutes).\nTo use the Instant Pot – place broccoli florets in the Instant Pot in a basket or piled high on a rack, add 1 cup of water. Pressure cook on high 0 minutes – yes 0 minutes. After button pops up, and right before it turns to 0, release steam immediately – otherwise broccoli will overcook. If your instant pot doesn't go to 0 minutes, put it on low pressure for 1 minute. Do quick release.\nPlace broccoli on air fryer basket. I like to use the air fryer parchment sheets but you don't have to. Use a large glass and smash down broccoli – flattening each floret. Drizzle/spray with oil, sprinkle Casa M Texas Twister over top, sprinkle grated Parmesan over all. Air fry for about 10-11 minutes until cheese has melted. You could also bake these for about 12 minutes, flipping over at the halfway mark.",
+        "image": "https://gourmetdoneskinny.com/wp-content/uploads/2024/01/Casa-M-Spicy-Smashed-Broccoli-final-1.jpg",
+        "_id": "559a1721-9f1b-4f49-9ab1-e177060fb33f"
+    }
+}
