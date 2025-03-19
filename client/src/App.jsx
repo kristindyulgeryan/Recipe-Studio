@@ -19,12 +19,14 @@ import Logout from "./components/logout/Logout.jsx";
 function App() {
   const[authData, setAuthData] = useState({})
   const userLoginHandler = (resultdata)=>{
-   
-    
     setAuthData(resultdata)
   }
+
+  const userLogoutHandler = ()=>{
+    setAuthData({})
+  }
   return (
-    <UserContext.Provider value={{...authData, userLoginHandler}}>
+    <UserContext.Provider value={{...authData, userLoginHandler, userLogoutHandler}}>
     <>
       <Header />
       <Routes>
