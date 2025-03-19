@@ -14,6 +14,7 @@ import About from "./components/about/About.jsx";
 import RecipeDetails from "./components/recipe-details/RecipeDetails.jsx";
 import RecipeEdit from "./components/recipe-edit/RecipeEdit.jsx";
 import "./style/style.css";
+import Logout from "./components/logout/Logout.jsx";
 
 function App() {
   const[authData, setAuthData] = useState({})
@@ -30,6 +31,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login/>} />
         <Route path="/register" element={<Register />} />
+        <Route path="/logout" element={<Logout />} />
         <Route path="/recipes" element={<RecipeGallery />} />
         <Route path="/recipes/create" element={<RecipeCreate />} />
         <Route path="/recipes/:recipeId/details" element={<RecipeDetails />} />
