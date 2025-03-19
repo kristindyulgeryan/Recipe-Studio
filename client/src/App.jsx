@@ -14,11 +14,11 @@ import RecipeEdit from "./components/recipe-edit/RecipeEdit.jsx";
 import "./style/style.css";
 
 function App() {
-  const[email, setEmail] = useState("")
-  const userLoginHandler = (authData)=>{
-    console.log(authData);
+  const[authData, setAuthData] = useState({})
+  const userLoginHandler = (resultdata)=>{
+   
     
-    setEmail(authData.email)
+    setAuthData(resultdata)
   }
   return (
     <>
@@ -29,7 +29,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/recipes" element={<RecipeGallery />} />
         <Route path="/recipes/create" element={<RecipeCreate />} />
-        <Route path="/recipes/:recipeId/details" element={<RecipeDetails email={email}/>} />
+        <Route path="/recipes/:recipeId/details" element={<RecipeDetails email={authData.email}/>} />
         <Route path="/recipes/:recipeId/edit" element={<RecipeEdit />} />
         <Route path="/about" element={<About />} />
       </Routes>

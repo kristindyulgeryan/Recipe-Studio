@@ -7,7 +7,8 @@ export default function Login({ onLogin}) {
    const navigate = useNavigate()
    const {login} = useLogin()
 
-  const loginHandler = async (_, formData)=>{
+  const loginHandler = async (_
+    , formData)=>{
      const values = Object.fromEntries(formData)
      const authData = await login(values.email, values.password)
 
