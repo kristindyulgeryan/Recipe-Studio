@@ -1,10 +1,13 @@
 import { useActionState } from "react";
 import{Link, useNavigate} from 'react-router'
 import { useLogin } from "../../api/authApi";
+import { useContext } from "react";
+import { UserContext } from "../../contexts/userContext";
 
 
-export default function Login({ onLogin}) {
+export default function Login() {
    const navigate = useNavigate()
+   const {userLoginHandler}= useContext(UserContext)
    const {login} = useLogin()
 
   const loginHandler = async (_
@@ -14,7 +17,7 @@ export default function Login({ onLogin}) {
 
      
      
-    onLogin(authData)
+     userLoginHandler(authData)
 
     navigate('/recipes')
     return values

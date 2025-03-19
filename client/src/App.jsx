@@ -1,6 +1,8 @@
 import { Routes, Route } from "react-router";
 import { useState } from "react";
 
+import { UserContext } from "./contexts/userContext.js";
+
 import Header from "./components/header/Header.jsx";
 import Home from "./components/home/Home.jsx";
 import Login from "./components/login/Login.jsx";
@@ -21,20 +23,22 @@ function App() {
     setAuthData(resultdata)
   }
   return (
+    <UserContext.Provider value={{...authData, userLoginHandler}}>
     <>
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login onLogin={userLoginHandler}/>} />
+        <Route path="/login" element={<Login/>} />
         <Route path="/register" element={<Register />} />
         <Route path="/recipes" element={<RecipeGallery />} />
         <Route path="/recipes/create" element={<RecipeCreate />} />
-        <Route path="/recipes/:recipeId/details" element={<RecipeDetails email={authData.email}/>} />
+        <Route path="/recipes/:recipeId/details" element={<RecipeDetails />} />
         <Route path="/recipes/:recipeId/edit" element={<RecipeEdit />} />
         <Route path="/about" element={<About />} />
       </Routes>
       <Footer />
     </>
+    </UserContext.Provider>
   );
 }
 
