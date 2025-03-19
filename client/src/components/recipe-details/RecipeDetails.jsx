@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router";
 import recipeService from "../../services/recipeService.js";
+import CommentsShow from "../comments-show/CommentsShow.jsx";
+import CommentsCreate from "../comments-create/CommentsCreate.jsx";
 
 export default function RecipeDetails() {
   const navigate = useNavigate();
@@ -59,31 +61,12 @@ export default function RecipeDetails() {
             </div>
           </div>
 
-          {/* Comments Section (Before Edit and Delete Buttons) */}
-          <div className="comments-section">
-            <h4>Comments</h4>
-            <div className="comment">
-              <p>
-                <strong>John Doe:</strong> This recipe is amazing! I tried it
-                last night, and it was so delicious.
-              </p>
-            </div>
-          </div>
+          
+         <CommentsShow/>
         </div>
       </div>
 
-      <div className="add-comment-section">
-        <h4>Add a Comment</h4>
-        <form className="add-comment-form">
-          <textarea
-            placeholder="Write your comment here..."
-            rows="4"
-          ></textarea>
-          <button type="submit" className="button add-comment-button">
-            Submit Comment
-          </button>
-        </form>
-      </div>
+      <CommentsCreate/>
     </section>
   );
 }
