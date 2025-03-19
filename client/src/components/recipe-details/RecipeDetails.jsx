@@ -3,14 +3,20 @@ import { Link, useNavigate, useParams } from "react-router";
 import recipeService from "../../services/recipeService.js";
 import CommentsShow from "../comments-show/CommentsShow.jsx";
 import CommentsCreate from "../comments-create/CommentsCreate.jsx";
+import commentService from "../../services/commentService.js";
+import { useContext } from "react";
+import { UserContext } from "../../contexts/userContext.js";
 
 export default function RecipeDetails() {
   const navigate = useNavigate();
+  const {email} = useContext(UserContext)
   const { recipeId } = useParams();
+  const[comments, setComments] =useState([])
   const [recipe, setRecipe] = useState({});
 
   useEffect(() => {
     recipeService.getOne(recipeId).then(setRecipe);
+    commentService.getAll( recipeId).then(setComments);
   }, [recipeId]);
 
   const recipeDeleteClickHandler = async () => {
@@ -25,6 +31,10 @@ export default function RecipeDetails() {
     await recipeService.delete(recipeId);
     navigate("/recipes");
   };
+
+  const commentCreatHandler = (newComment)=>{
+    setComments(...state =>[...state, newComment])
+  }
 
   return (
     <section id="recipe-details">
@@ -62,11 +72,15 @@ export default function RecipeDetails() {
           </div>
 
           
-         <CommentsShow/>
+         <CommentsShow comments={comments}/>
         </div>
       </div>
 
-      <CommentsCreate/>
+      <CommentsCreate 
+      email={email} 
+      recipeId={recipeId}
+      onCreate={commentCreatHandler}
+      />
     </section>
   );
 }
