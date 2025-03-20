@@ -1,20 +1,21 @@
-import { useContext, useEffect, useState } from "react";
+import {  useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router";
-import recipeService from "../../services/recipeService.js";
 import CommentsShow from "../comments-show/CommentsShow.jsx";
 import CommentsCreate from "../comments-create/CommentsCreate.jsx";
 import commentService from "../../services/commentService.js";
-import { useRecipe } from "../../api/recipeApi.js";
-import { UserContext } from "../../contexts/userContext.js";
+import { useDeleteRecipe, useRecipe } from "../../api/recipeApi.js";
+
+import useAuth from "../../hooks/useAuth.js";
 
 
 
 export default function RecipeDetails() {
   const navigate = useNavigate();
-  const {email} = useContext(UserContext)
+  const {email} = useAuth()
   const[comments, setComments] =useState([])
   const { recipeId } = useParams();
   const {recipe} = useRecipe(recipeId)
+  const {deleteRecipe}=useDeleteRecipe()
 
   useEffect(() => {
       commentService.getAll( recipeId).then(setComments);
@@ -29,7 +30,9 @@ export default function RecipeDetails() {
       return;
     }
 
-    await recipeService.delete(recipeId);
+   
+
+  await deleteRecipe(recipeId)
     navigate("/recipes");
   };
 
@@ -55,7 +58,6 @@ export default function RecipeDetails() {
             <h4>Ingredients & Preparation:</h4>
             <p id="recipe-description-display">{recipe.description}</p>
 
-            {/* Buttons for edit and delete  */}
             <div className="buttons">
               <Link
                 to={`/recipes/${recipeId}/edit`}

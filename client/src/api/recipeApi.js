@@ -1,6 +1,6 @@
-import { useContext, useEffect, useState } from "react";
+import {  useEffect, useState } from "react";
+import useAuth from "../hooks/useAuth.js";
 import request from "../utils/request.js";
-import { UserContext } from "../contexts/userContext.js";
 
 const baseUrl = "http://localhost:3030/data/recipes";
 
@@ -18,15 +18,9 @@ export const useRecipes=()=>{
 }
 
 export const useCreateRecipe =()=>{
-    const {accessToken} = useContext(UserContext)
-
-    const options = {
-        headers:{
-            "X-Authorization": accessToken
-        }
-    }
+    const { request }= useAuth()
    const create =async (recipeData) =>
-         request.post(baseUrl, recipeData, options);
+         request.post(baseUrl, recipeData);
      return{
         create,
      }
@@ -43,4 +37,30 @@ export const useRecipe = (recipeId) => {
         recipe,
     }
     
+}
+
+export const useEditRecipe =()=>{
+    const{request}=useAuth()
+
+     const edit = async (recipeId, recipeData)=>{
+         request.put(`${baseUrl}/${recipeId}`, {
+          ...recipeData,
+          _id: recipeId,
+        })
+        
+      }
+      return{
+        edit,   
+    }
+        
+}
+
+export const useDeleteRecipe=()=>{
+    const {request}= useAuth()
+     const deleteRecipe = (recipeId) => {
+        request.delete(`${baseUrl}/${recipeId}`);
+      }
+      return{
+        deleteRecipe
+      } 
 }
