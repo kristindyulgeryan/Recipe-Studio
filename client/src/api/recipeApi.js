@@ -1,11 +1,21 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import request from "../utils/request.js";
 import { UserContext } from "../contexts/userContext.js";
 
 const baseUrl = "http://localhost:3030/data/recipes";
 
 
+export const useRecipes=()=>{
+    const [recipes, setRecipes] = useState([]);
+  useEffect(()=>{
+    request.get(baseUrl)
+    .then(setRecipes)
 
+  },[])
+  return{
+    recipes,
+  }
+}
 
 export const useCreateRecipe =()=>{
     const {accessToken} = useContext(UserContext)

@@ -1,18 +1,10 @@
-import { useEffect, useState } from "react";
+
 import { Link } from "react-router";
-import recipeService from "../../services/recipeService.js";
+
+import { useRecipes } from "../../api/recipeApi.js";
 
 export default function RecipeGallery() {
-  const [recipes, setRecipes] = useState([]);
-
-  useEffect(() => {
-    recipeService
-      .getAll()
-      .then(setRecipes)
-      .catch((error) => {
-        console.error("Error fetching recipes:", error);
-      });
-  }, []);
+ const {recipes} = useRecipes()
 
   return (
     <section className="py-5 service-sec">
