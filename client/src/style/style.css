@@ -69,6 +69,13 @@ img {
   width: 100%;
   transition: 0.4s ease;
 }
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--secondary-clr);
+  padding: 10px;
+}
 
 .navbar-brand.logo img {
   transition: all 0.3s ease-in-out;
@@ -81,11 +88,22 @@ img {
   box-shadow: 0 15px 30px var(--primary-clr);
 }
 
+
+.navbar .navbar-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+
 .navbar .navbar-nav .nav-link {
   color: white;
   font-size: 16px;
   padding: 5px 20px !important;
+  
 }
+
 
 .navbar .navbar-nav .nav-link:hover {
   background-color: var(--primary-clr);
@@ -110,6 +128,7 @@ img {
   position: sticky;
   top: 0;
   width: 100%;
+  min-height: 60px;
   background: var(--secondary-clr);
   z-index: 99;
 }

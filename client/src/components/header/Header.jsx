@@ -1,6 +1,10 @@
+import { useContext } from "react";
 import { Link } from "react-router";
+import { UserContext } from "../../contexts/userContext";
 
 export default function Header() {
+ const {email} = useContext(UserContext)
+
   return (
     <header className="header">
       <nav className="navbar navbar-expand-lg">
@@ -21,14 +25,10 @@ export default function Header() {
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
+            
               <li className="nav-item">
                 <Link className="nav-link" to="/recipes">
                   Recipe Gallery
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/recipes/create">
-                  Recipe Factory
                 </Link>
               </li>
               <li className="nav-item">
@@ -36,21 +36,40 @@ export default function Header() {
                   About Us
                 </Link>
               </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/login">
-                  Sign In
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="register">
-                  Sign Up
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/logout">
-                  Sign Out
-                </Link>
-              </li>
+              {email 
+              ?
+               (
+                <>
+                 <li className="nav-item">
+                  <Link className="nav-link" to="/recipes/create">
+                   Recipe Factory
+                    </Link>
+                  </li>
+                   
+                   <li className="nav-item">
+                 <Link className="nav-link" to="/logout">
+                   Sign Out
+                 </Link>
+                 
+                 </li> 
+                 <span style={{ color: "white", fontSize: "14px", fontWeight: "bold" }}>{email}</span>
+                 </>
+                   ):
+                   <>
+                   <li className="nav-item">
+                   <Link className="nav-link" to="/login">
+                     Sign In
+                   </Link>
+                 </li>
+                 <li className="nav-item">
+                   <Link className="nav-link" to="register">
+                     Sign Up
+                   </Link>
+                 </li>
+                 
+                 </>
+                   }
+            
             </ul>
           </div>
         </div>
