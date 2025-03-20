@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link } from "react-router";
 import { UserContext } from "../../contexts/userContext";
+import SearchBar from "../search-bar/SearchBar";
 
 export default function Header() {
  const {email} = useContext(UserContext)
@@ -53,6 +54,7 @@ export default function Header() {
                  
                  </li> 
                  <span style={{ color: "white", fontSize: "14px", fontWeight: "bold" }}>{email}</span>
+                 
                  </>
                    ):
                    <>
@@ -68,7 +70,9 @@ export default function Header() {
                  </li>
                  
                  </>
+                 
                    }
+                   <SearchBar/>
             
             </ul>
           </div>
