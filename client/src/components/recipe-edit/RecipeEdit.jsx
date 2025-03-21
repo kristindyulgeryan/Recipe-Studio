@@ -15,6 +15,7 @@ export default function RecipeEdit() {
   
     navigate(`/recipes/${recipeId}/details`);
   };
+  
   return (
     <section id="edit-form">
       <form id="edit-form-container" action={formAction}>

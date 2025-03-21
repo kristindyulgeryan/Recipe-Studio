@@ -24,10 +24,8 @@ export default function RecipeGallery() {
         </div>
 
         <div className="row mt-5">
-
           {recipes.length > 0 ? (
             recipes.map((recipe) => (
-              
               <div key={recipe._id} className="col-lg-4 col-md-6">
                 <div className="service-box">
                   <div className="ser-img">

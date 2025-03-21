@@ -9,7 +9,11 @@ export const useRecipes=()=>{
     const [recipes, setRecipes] = useState([]);
 
   useEffect(()=>{
-    request.get(baseUrl)
+    const searchParams = new URLSearchParams({
+      sortBy: "_createdOn desc", 
+    });
+
+    request.get(`${baseUrl}?${searchParams.toString()}`)
     .then(setRecipes)
 
   },[])
@@ -32,6 +36,7 @@ export const useRecipe = (recipeId) => {
   }
   
 }
+
 
 export const useCreateRecipe =()=>{
     const { request }= useAuth()

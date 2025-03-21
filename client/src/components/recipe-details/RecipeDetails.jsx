@@ -13,7 +13,7 @@ export default function RecipeDetails() {
   const navigate = useNavigate();
   const {email, _id: userId} = useAuth()
   // const[comments, setComments] =useState([])
-  const { recipeId } = useParams();
+  const { recipeId } = useParams(); 
   const {recipe} = useRecipe(recipeId)
   const {deleteRecipe}=useDeleteRecipe()
   const { comments } = useComments(recipeId)

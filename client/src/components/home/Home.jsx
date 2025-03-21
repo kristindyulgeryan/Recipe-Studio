@@ -1,6 +1,7 @@
 import { Link } from "react-router";
 
 export default function Home() {
+  
   return (
     <section className="banner-sec">
       <div className="container">
