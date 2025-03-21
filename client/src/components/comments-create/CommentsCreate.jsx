@@ -8,7 +8,7 @@ export default function CommentsCreate({ email, recipeId, onCreate }) {
   const comment = formData.get('comment')
 
  const resultCreatedComment = await commentService.create(email, recipeId, comment)
-  console.log(resultCreatedComment);
+  
   onCreate(resultCreatedComment)
   }
     return(

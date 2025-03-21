@@ -32,6 +32,7 @@ const request = async (method, url, data, options= {}) => {
   return result;
 
 };
+
 export default {
   get: request.bind(null, "GET"),
   post: request.bind(null, "POST"),

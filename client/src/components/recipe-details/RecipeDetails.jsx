@@ -1,25 +1,27 @@
-import {  useEffect, useState } from "react";
+// import {  useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router";
 import CommentsShow from "../comments-show/CommentsShow.jsx";
 import CommentsCreate from "../comments-create/CommentsCreate.jsx";
-import commentService from "../../services/commentService.js";
+// import commentService from "../../services/commentService.js";
 import { useDeleteRecipe, useRecipe } from "../../api/recipeApi.js";
 
 import useAuth from "../../hooks/useAuth.js";
-
+import { useComments } from "../../api/commentApi";
 
 
 export default function RecipeDetails() {
   const navigate = useNavigate();
-  const {email} = useAuth()
-  const[comments, setComments] =useState([])
+  const {email, _id: userId} = useAuth()
+  // const[comments, setComments] =useState([])
   const { recipeId } = useParams();
   const {recipe} = useRecipe(recipeId)
   const {deleteRecipe}=useDeleteRecipe()
+  const { comments } = useComments(recipeId)
 
-  useEffect(() => {
-      commentService.getAll( recipeId).then(setComments);
-  }, [recipeId]);
+  // useEffect(() => {
+  //     commentService.getAll( recipeId).then(setComments);
+  // }, [recipeId]);
+
 
   const recipeDeleteClickHandler = async () => {
     const hasConfirm = confirm(
@@ -30,15 +32,16 @@ export default function RecipeDetails() {
       return;
     }
 
-   
-
+  
   await deleteRecipe(recipeId)
     navigate("/recipes");
   };
 
   const commentCreatHandler = (newComment)=>{
-    setComments(...state =>[...state, newComment])
+    // setComments(...state =>[...state, newComment])
   }
+
+  const isOwner = userId === recipe._ownerId;
 
   return (
     <section id="recipe-details">
@@ -58,6 +61,7 @@ export default function RecipeDetails() {
             <h4>Ingredients & Preparation:</h4>
             <p id="recipe-description-display">{recipe.description}</p>
 
+{isOwner && (
             <div className="buttons">
               <Link
                 to={`/recipes/${recipeId}/edit`}
@@ -72,6 +76,7 @@ export default function RecipeDetails() {
                 Delete Recipe
               </button>
             </div>
+)}
           </div>
 
           

@@ -1,6 +1,6 @@
 import { useContext, useEffect } from "react";
-import request from "../utils/request"
 import { UserContext } from "../contexts/userContext";
+import request from "../utils/request"
 
 const baseUrl = "http://localhost:3030/users";
 
@@ -14,7 +14,7 @@ export const useLogin=()=>{
     
 
     return {
-        login
+        login,
     }
 }
 
@@ -26,7 +26,7 @@ export const useRegister=()=>{
         )
     
     return {
-        register
+        register,
     }
 }
 
@@ -39,6 +39,7 @@ export const useLogout=()=>{
     if(!accessToken){
         return
     }
+    
     const options = {
         headers: {'X-Authorization': accessToken}
     }
