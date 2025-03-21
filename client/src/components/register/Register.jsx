@@ -1,29 +1,26 @@
-import { useContext } from "react"
-import { useRegister } from "../../api/authApi.js"
-import { UserContext } from "../../contexts/userContext"
-import { useNavigate } from "react-router"
-
+import { useRegister } from "../../api/authApi.js";
+import { useUserContext } from "../../contexts/userContext";
+import { useNavigate } from "react-router";
 
 export default function Register() {
-  const navigate= useNavigate()
-  const {register} = useRegister()
-  const {userLoginHandler} = useContext(UserContext)
+  const navigate = useNavigate();
+  const { register } = useRegister();
+  const { userLoginHandler } = useUserContext();
 
- const registerHandler =async (formdata)=>{
-    const {username, email, password, confirm} = Object.fromEntries(formdata)
+  const registerHandler = async (formdata) => {
+    const { username, email, password } = Object.fromEntries(formdata);
 
-    const confirmPassword = formdata.get('confirm-password')
-        if(password !== confirmPassword){
-            alert('Passwords do not match')
-            return
-        }
+    const confirmPassword = formdata.get("confirm-password");
+    if (password !== confirmPassword) {
+      alert("Passwords do not match");
+      return;
+    }
 
-      const authData=  await register(username, email, password)
+    const authData = await register(username, email, password);
 
-      userLoginHandler(authData)
-      navigate('/')
- }
-
+    userLoginHandler(authData);
+    navigate("/");
+  };
 
   return (
     <section id="register-page" className="auth">
