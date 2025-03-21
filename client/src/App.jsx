@@ -1,5 +1,4 @@
 import { Routes, Route } from "react-router";
-import { useState } from "react";
 
 import { UserContext } from "./contexts/userContext.js";
 
@@ -15,33 +14,39 @@ import RecipeDetails from "./components/recipe-details/RecipeDetails.jsx";
 import RecipeEdit from "./components/recipe-edit/RecipeEdit.jsx";
 import "./style/style.css";
 import Logout from "./components/logout/Logout.jsx";
+import usePersistedState from "./hooks/usePersistedState.js";
 
 function App() {
-  const[authData, setAuthData] = useState({})
-  const userLoginHandler = (resultdata)=>{
-    setAuthData(resultdata)
-  }
+  const [authData, setAuthData] = usePersistedState("auth", {});
+  const userLoginHandler = (resultdata) => {
+    setAuthData(resultdata);
+  };
 
-  const userLogoutHandler = ()=>{
-    setAuthData({})
-  }
+  const userLogoutHandler = () => {
+    setAuthData({});
+  };
   return (
-    <UserContext.Provider value={{...authData, userLoginHandler, userLogoutHandler}}>
-    <>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login/>} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/logout" element={<Logout />} />
-        <Route path="/recipes" element={<RecipeGallery />} />
-        <Route path="/recipes/create" element={<RecipeCreate />} />
-        <Route path="/recipes/:recipeId/details" element={<RecipeDetails />} />
-        <Route path="/recipes/:recipeId/edit" element={<RecipeEdit />} />
-        <Route path="/about" element={<About />} />
-      </Routes>
-      <Footer />
-    </>
+    <UserContext.Provider
+      value={{ ...authData, userLoginHandler, userLogoutHandler }}
+    >
+      <>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/logout" element={<Logout />} />
+          <Route path="/recipes" element={<RecipeGallery />} />
+          <Route path="/recipes/create" element={<RecipeCreate />} />
+          <Route
+            path="/recipes/:recipeId/details"
+            element={<RecipeDetails />}
+          />
+          <Route path="/recipes/:recipeId/edit" element={<RecipeEdit />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+        <Footer />
+      </>
     </UserContext.Provider>
   );
 }
