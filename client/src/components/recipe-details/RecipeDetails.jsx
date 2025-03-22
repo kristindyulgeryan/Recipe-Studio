@@ -1,27 +1,19 @@
-// import {  useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router";
 import CommentsShow from "../comments-show/CommentsShow.jsx";
 import CommentsCreate from "../comments-create/CommentsCreate.jsx";
-// import commentService from "../../services/commentService.js";
 import { useDeleteRecipe, useRecipe } from "../../api/recipeApi.js";
-
 import useAuth from "../../hooks/useAuth.js";
-import { useComments } from "../../api/commentApi";
-import { useCreateComment } from "../../api/commentsApi.js";
+
+import { useComments, useCreateComment } from "../../api/commentsApi.js";
 
 export default function RecipeDetails() {
   const navigate = useNavigate();
   const { email, _id: userId } = useAuth();
-  // const[comments, setComments] =useState([])
   const { recipeId } = useParams();
   const { recipe } = useRecipe(recipeId);
   const { deleteRecipe } = useDeleteRecipe();
-  const { comments } = useComments(recipeId);
+  const { comments, setComments } = useComments(recipeId);
   const { create } = useCreateComment();
-
-  // useEffect(() => {
-  //     commentService.getAll( recipeId).then(setComments);
-  // }, [recipeId]);
 
   const recipeDeleteClickHandler = async () => {
     const hasConfirm = confirm(
@@ -37,7 +29,9 @@ export default function RecipeDetails() {
   };
 
   const commentCreatHandler = async (comment) => {
-    await create(recipeId, comment);
+    const newComment = await create(recipeId, comment);
+
+    setComments((state) => [...state, newComment]);
   };
 
   const isOwner = userId === recipe._ownerId;

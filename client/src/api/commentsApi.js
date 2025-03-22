@@ -13,10 +13,11 @@ export const useComments = (recipeId) => {
     });
 
     request.get(`${baseUrl}?${searchParams.toString()}`).then(setComments);
-  }, [request, recipeId]);
+  }, [recipeId]);
 
   return {
     comments,
+    setComments,
   };
 };
 
