@@ -7,21 +7,21 @@ import { useDeleteRecipe, useRecipe } from "../../api/recipeApi.js";
 
 import useAuth from "../../hooks/useAuth.js";
 import { useComments } from "../../api/commentApi";
-
+import { useCreateComment } from "../../api/commentsApi.js";
 
 export default function RecipeDetails() {
   const navigate = useNavigate();
-  const {email, _id: userId} = useAuth()
+  const { email, _id: userId } = useAuth();
   // const[comments, setComments] =useState([])
-  const { recipeId } = useParams(); 
-  const {recipe} = useRecipe(recipeId)
-  const {deleteRecipe}=useDeleteRecipe()
-  const { comments } = useComments(recipeId)
+  const { recipeId } = useParams();
+  const { recipe } = useRecipe(recipeId);
+  const { deleteRecipe } = useDeleteRecipe();
+  const { comments } = useComments(recipeId);
+  const { create } = useCreateComment();
 
   // useEffect(() => {
   //     commentService.getAll( recipeId).then(setComments);
   // }, [recipeId]);
-
 
   const recipeDeleteClickHandler = async () => {
     const hasConfirm = confirm(
@@ -32,14 +32,13 @@ export default function RecipeDetails() {
       return;
     }
 
-  
-  await deleteRecipe(recipeId)
+    await deleteRecipe(recipeId);
     navigate("/recipes");
   };
 
-  const commentCreatHandler = (newComment)=>{
-    // setComments(...state =>[...state, newComment])
-  }
+  const commentCreatHandler = async (comment) => {
+    await create(recipeId, comment);
+  };
 
   const isOwner = userId === recipe._ownerId;
 
@@ -61,33 +60,31 @@ export default function RecipeDetails() {
             <h4>Ingredients & Preparation:</h4>
             <p id="recipe-description-display">{recipe.description}</p>
 
-{isOwner && (
-            <div className="buttons">
-              <Link
-                to={`/recipes/${recipeId}/edit`}
-                className="button edit-button"
-              >
-                Edit Recipe
-              </Link>
-              <button
-                className="button delete-button"
-                onClick={recipeDeleteClickHandler}
-              >
-                Delete Recipe
-              </button>
-            </div>
-)}
+            {isOwner && (
+              <div className="buttons">
+                <Link
+                  to={`/recipes/${recipeId}/edit`}
+                  className="button edit-button"
+                >
+                  Edit Recipe
+                </Link>
+                <button
+                  className="button delete-button"
+                  onClick={recipeDeleteClickHandler}
+                >
+                  Delete Recipe
+                </button>
+              </div>
+            )}
           </div>
-
-          
-         <CommentsShow comments={comments}/>
+          <CommentsShow comments={comments} />
         </div>
       </div>
 
-      <CommentsCreate 
-      email={email} 
-      recipeId={recipeId}
-      onCreate={commentCreatHandler}
+      <CommentsCreate
+        email={email}
+        recipeId={recipeId}
+        onCreate={commentCreatHandler}
       />
     </section>
   );
