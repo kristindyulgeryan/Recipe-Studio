@@ -1,21 +1,26 @@
-
-import { useNavigate, useParams } from "react-router";
+import { Navigate, useNavigate, useParams } from "react-router";
 import { useEditRecipe, useRecipe } from "../../api/recipeApi.js";
+import useAuth from "../../hooks/useAuth.js";
 
 export default function RecipeEdit() {
+  const { userId } = useAuth();
   const navigate = useNavigate();
   const { recipeId } = useParams();
-  const {recipe} = useRecipe(recipeId);
-  const{ edit } = useEditRecipe()
+  const { recipe } = useRecipe(recipeId);
+  const { edit } = useEditRecipe();
 
- 
   const formAction = async (formData) => {
     const recipeData = Object.fromEntries(formData);
     await edit(recipeId, recipeData);
-  
+
     navigate(`/recipes/${recipeId}/details`);
   };
-  
+
+  const isOwner = userId === recipe._onwerId;
+  if (!isOwner) {
+    return <Navigate to="/recipes" />;
+  }
+
   return (
     <section id="edit-form">
       <form id="edit-form-container" action={formAction}>
