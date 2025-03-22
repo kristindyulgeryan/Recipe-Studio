@@ -5,15 +5,18 @@ import { useDeleteRecipe, useRecipe } from "../../api/recipeApi.js";
 import useAuth from "../../hooks/useAuth.js";
 
 import { useComments, useCreateComment } from "../../api/commentsApi.js";
+import { useOptimistic } from "react";
+import { v4 as uuid } from "uuid";
 
 export default function RecipeDetails() {
   const navigate = useNavigate();
-  const { email, _id: userId } = useAuth();
+  const { email, userId } = useAuth();
   const { recipeId } = useParams();
   const { recipe } = useRecipe(recipeId);
   const { deleteRecipe } = useDeleteRecipe();
-  const { comments, setComments } = useComments(recipeId);
   const { create } = useCreateComment();
+  const { comments, addComment } = useComments(recipeId);
+  const [optimisticComments, setOptimisticComments] = useOptimistic(comments);
 
   const recipeDeleteClickHandler = async () => {
     const hasConfirm = confirm(
@@ -29,9 +32,24 @@ export default function RecipeDetails() {
   };
 
   const commentCreatHandler = async (comment) => {
-    const newComment = await create(recipeId, comment);
+    // Optimistic update
+    const newOptimisticComment = {
+      _id: uuid(),
+      _ownerId: userId,
+      recipeId,
+      comment,
+      pending: true,
+      author: {
+        email,
+      },
+    };
 
-    setComments((state) => [...state, newComment]);
+    // Server update
+    setOptimisticComments(newOptimisticComment);
+    const commentResult = await create(recipeId, comment);
+
+    // Locale state update
+    addComment({ ...commentResult, author: { email } });
   };
 
   const isOwner = userId === recipe._ownerId;
@@ -71,7 +89,7 @@ export default function RecipeDetails() {
               </div>
             )}
           </div>
-          <CommentsShow comments={comments} />
+          <CommentsShow comments={optimisticComments} />
         </div>
       </div>
 
