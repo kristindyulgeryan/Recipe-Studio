@@ -4,10 +4,10 @@ export default function CommentsShow({ comments }) {
       <h4>Comments:</h4>
 
       {comments.length > 0
-        ? comments.map(({ _id, _ownerId, comment }) => (
+        ? comments.map(({ _id, comment, author }) => (
             <div key={_id} className="comment">
               <p>
-                {_ownerId} : {comment}
+                {author.username} : {comment}
               </p>
             </div>
           ))

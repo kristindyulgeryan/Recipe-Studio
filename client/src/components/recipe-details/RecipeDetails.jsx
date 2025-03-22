@@ -10,13 +10,14 @@ import { v4 as uuid } from "uuid";
 
 export default function RecipeDetails() {
   const navigate = useNavigate();
-  const { email, userId } = useAuth();
+  const { email, userId, username } = useAuth();
   const { recipeId } = useParams();
   const { recipe } = useRecipe(recipeId);
   const { deleteRecipe } = useDeleteRecipe();
   const { create } = useCreateComment();
   const { comments, addComment } = useComments(recipeId);
   const [optimisticComments, setOptimisticComments] = useOptimistic(comments);
+  console.log(comments);
 
   const recipeDeleteClickHandler = async () => {
     const hasConfirm = confirm(
@@ -40,7 +41,7 @@ export default function RecipeDetails() {
       comment,
       pending: true,
       author: {
-        email,
+        username,
       },
     };
 
@@ -49,7 +50,7 @@ export default function RecipeDetails() {
     const commentResult = await create(recipeId, comment);
 
     // Locale state update
-    addComment({ ...commentResult, author: { email } });
+    addComment({ ...commentResult, author: { username } });
   };
 
   const isOwner = userId === recipe._ownerId;
