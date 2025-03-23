@@ -16,8 +16,11 @@ export default function RecipeDetails() {
   const { deleteRecipe } = useDeleteRecipe();
   const { create } = useCreateComment();
   const { comments, addComment } = useComments(recipeId);
-  const [optimisticComments, setOptimisticComments] = useOptimistic(comments);
-  console.log(comments);
+  const [optimisticComments, setOptimisticComments] = useOptimistic(
+    comments,
+    (state, newComment) => [...state, newComment]
+  );
+  console.log(optimisticComments);
 
   const recipeDeleteClickHandler = async () => {
     const hasConfirm = confirm(
@@ -47,6 +50,7 @@ export default function RecipeDetails() {
 
     // Server update
     setOptimisticComments(newOptimisticComment);
+
     const commentResult = await create(recipeId, comment);
 
     // Locale state update
