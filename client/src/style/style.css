@@ -20,7 +20,7 @@ section {
   background: url("imgs/banner-bg.jpg") no-repeat center center/cover;
   background-attachment: fixed;
   padding: 20px;
-  min-height: calc(100vh - 50px); /* Пълно запълване на екрана */
+  min-height: calc(100vh - 50px);
 }
 
 li {
@@ -88,7 +88,6 @@ img {
   box-shadow: 0 15px 30px var(--primary-clr);
 }
 
-
 .navbar .navbar-nav {
   display: flex;
   justify-content: center;
@@ -96,14 +95,11 @@ img {
   gap: 10px;
 }
 
-
 .navbar .navbar-nav .nav-link {
   color: white;
   font-size: 16px;
   padding: 5px 20px !important;
-  
 }
-
 
 .navbar .navbar-nav .nav-link:hover {
   background-color: var(--primary-clr);
@@ -202,7 +198,6 @@ img {
   background-color: rgba(255, 255, 255, 0.6);
 }
 
-/* Submit Button Styling */
 #edit-form-container input[type="submit"] {
   background-color: var(--primary-clr);
   color: white;
@@ -355,9 +350,9 @@ h2.title-h {
   width: 96%;
   margin-top: 50px;
   display: flex;
-  flex-direction: column; /* Stack items vertically */
-  min-height: 350px; /* Keeps the box from collapsing */
-  position: relative; /* Allows the image to overlap the text */
+  flex-direction: column;
+  min-height: 350px;
+  position: relative;
   margin-bottom: 40px;
 }
 
@@ -413,13 +408,6 @@ h2.title-h {
 
 .ser-arr a:hover {
   background-color: var(--secondary-clr);
-}
-
-.comment-count {
-  font-size: 14px;
-  color: #666; /* По-светъл цвят за текст */
-  font-weight: 600;
-  margin-left: 100px; /* Разстояние между линка и броя на коментарите */
 }
 
 /*  Footer */
@@ -660,12 +648,12 @@ footer {
 
 /* Add Comment Section */
 .add-comment-section {
-  margin-top: 20px; /* Margin to create space above */
+  margin-top: 20px;
   padding: 20px;
-  background-color: rgba(255, 255, 255, 0.2); /* Light transparent background */
-  backdrop-filter: blur(10px); /* Subtle blur effect */
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
   border-radius: 10px;
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
