@@ -63,3 +63,22 @@ export const useDeleteRecipe = () => {
     deleteRecipe,
   };
 };
+
+export const useSearchByLetters = (letters) => {
+  const [recipes, setRecipes] = useState([]);
+
+  useEffect(() => {
+    if (!letters) return;
+
+    const searchParams = new URLSearchParams({
+      where: `title LIKE "${letters.toLowerCase()}%"`,
+      sortBy: "_createdOn desc",
+    });
+
+    request.get(`${baseUrl}?${searchParams.toString()}`).then(setRecipes);
+  }, [letters]);
+
+  return {
+    recipes,
+  };
+};

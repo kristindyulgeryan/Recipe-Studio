@@ -4,7 +4,7 @@ import { UserContext } from "../../contexts/userContext";
 import SearchBar from "../search-bar/SearchBar";
 
 export default function Header() {
- const {email} = useContext(UserContext)
+  const { email } = useContext(UserContext);
 
   return (
     <header className="header">
@@ -26,7 +26,6 @@ export default function Header() {
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
-            
               <li className="nav-item">
                 <Link className="nav-link" to="/recipes">
                   Recipe Gallery
@@ -37,43 +36,44 @@ export default function Header() {
                   About Us
                 </Link>
               </li>
-              {email 
-              ?
-               (
+              {email ? (
                 <>
-                 <li className="nav-item">
-                  <Link className="nav-link" to="/recipes/create">
-                   Recipe Factory
+                  <li className="nav-item">
+                    <Link className="nav-link" to="/recipes/create">
+                      Recipe Factory
                     </Link>
                   </li>
-                   
-                   <li className="nav-item">
-                 <Link className="nav-link" to="/logout">
-                   Sign Out
-                 </Link>
-                 
-                 </li> 
-                 <span style={{ color: "white", fontSize: "14px", fontWeight: "bold" }}>{email}</span>
-                 
-                 </>
-                   ):
-                   <>
-                   <li className="nav-item">
-                   <Link className="nav-link" to="/login">
-                     Sign In
-                   </Link>
-                 </li>
-                 <li className="nav-item">
-                   <Link className="nav-link" to="register">
-                     Sign Up
-                   </Link>
-                 </li>
-                 
-                 </>
-                 
-                   }
-                   <SearchBar/>
-            
+
+                  <li className="nav-item">
+                    <Link className="nav-link" to="/logout">
+                      Sign Out
+                    </Link>
+                  </li>
+                  <span
+                    style={{
+                      color: "white",
+                      fontSize: "14px",
+                      fontWeight: "bold",
+                    }}
+                  >
+                    {email}
+                  </span>
+                </>
+              ) : (
+                <>
+                  <li className="nav-item">
+                    <Link className="nav-link" to="/login">
+                      Sign In
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link className="nav-link" to="register">
+                      Sign Up
+                    </Link>
+                  </li>
+                </>
+              )}
+              <SearchBar />
             </ul>
           </div>
         </div>
