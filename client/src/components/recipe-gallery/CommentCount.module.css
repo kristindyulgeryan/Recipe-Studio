@@ -1,0 +1,11 @@
+.commentCount {
+  font-size: 14px;
+  color: #666;
+  font-weight: 600;
+  margin-left: 100px;
+  transition: color 0.3s ease;
+}
+
+.commentCount:hover {
+  color: var(--primary-clr);
+}

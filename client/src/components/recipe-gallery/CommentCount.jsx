@@ -8,7 +8,7 @@ const CommentCount = ({ recipeId }) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate(`/recipes/${recipeId}/details`); // Navigate to recipe details page
+    navigate(`/recipes/${recipeId}/details`);
   };
 
   return (
