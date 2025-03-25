@@ -14,18 +14,23 @@ import RecipeEdit from "./components/recipe-edit/RecipeEdit.jsx";
 import Logout from "./components/logout/Logout.jsx";
 import AuthGuard from "./components/guards/AuthGuards.jsx";
 import "./style/style.css";
+import { useState } from "react";
 
 function App() {
+  const [searchResults, setSearchResults] = useState(null);
   return (
     <UserProvider>
       <>
-        <Header />
+        <Header onSearchResults={setSearchResults} />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
 
-          <Route path="/recipes" element={<RecipeGallery />} />
+          <Route
+            path="/recipes"
+            element={<RecipeGallery searchResults={searchResults} />}
+          />
           <Route
             path="/recipes/:recipeId/details"
             element={<RecipeDetails />}

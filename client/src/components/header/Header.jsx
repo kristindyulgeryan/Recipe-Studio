@@ -2,9 +2,16 @@ import { useContext } from "react";
 import { Link } from "react-router";
 import { UserContext } from "../../contexts/userContext";
 import SearchBar from "../search-bar/SearchBar";
+import { useSearchRecipes } from "../../api/recipeApi.js";
 
-export default function Header() {
+export default function Header({ onSearchResults }) {
   const { email } = useContext(UserContext);
+  const { showAllRecipes } = useSearchRecipes();
+
+  const handleGalleryClick = () => {
+    showAllRecipes();
+    onSearchResults?.(null);
+  };
 
   return (
     <header className="header">
@@ -27,7 +34,11 @@ export default function Header() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <Link className="nav-link" to="/recipes">
+                <Link
+                  className="nav-link"
+                  to="/recipes"
+                  onClick={handleGalleryClick}
+                >
                   Recipe Gallery
                 </Link>
               </li>
@@ -73,7 +84,7 @@ export default function Header() {
                   </li>
                 </>
               )}
-              <SearchBar />
+              <SearchBar onSearchResults={onSearchResults} />
             </ul>
           </div>
         </div>
