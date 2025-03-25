@@ -9,7 +9,7 @@ function commentsReducer(state, action) {
     case "ADD_COMMENT":
       return [...state, action.payload];
     case "GET_ALL":
-      return action.payload;
+      return Array.isArray(action.payload) ? action.payload : [];
     default:
       return state;
   }
@@ -25,15 +25,17 @@ export const useComments = (recipeId) => {
       load: `author=_ownerId:users`,
     });
 
-    const options = {
-      headers: {
-        "X-Authorization": accessToken,
-      },
-    };
+    const options = accessToken
+    ? { headers: { "X-Authorization": accessToken } }
+    : {};
 
     request
-      .get(`${baseUrl}?${searchParams.toString()}`, null, options)
-      .then((result) => dispatch({ type: "GET_ALL", payload: result }));
+  .get(`${baseUrl}?${searchParams.toString()}`, null, options)
+  .then((result) => dispatch({ type: "GET_ALL", payload: result }))
+  .catch((err) => {
+    console.error("Error fetching comments:", err);
+    dispatch({ type: "GET_ALL", payload: [] }); 
+  });
   }, [recipeId, accessToken]);
 
   return {
