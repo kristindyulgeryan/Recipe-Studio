@@ -16,7 +16,7 @@ export default function RecipeEdit() {
     navigate(`/recipes/${recipeId}/details`);
   };
 
-  const isOwner = userId === recipe._onwerId;
+  const isOwner = userId === recipe._ownerId;
   if (!isOwner) {
     return <Navigate to="/recipes" />;
   }
