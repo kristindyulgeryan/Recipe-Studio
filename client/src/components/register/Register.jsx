@@ -1,6 +1,6 @@
 import { useRegister } from "../../api/authApi.js";
 import { useUserContext } from "../../contexts/userContext";
-import { useNavigate } from "react-router";
+import { Link, useNavigate } from "react-router";
 
 export default function Register() {
   const navigate = useNavigate();
@@ -53,7 +53,7 @@ export default function Register() {
           <input className="btn submit" type="submit" value="Register" />
           <p className="field">
             <span>
-              If you already have profile click <a href="/login">here</a>
+              If you already have profile click <Link to="/login">here</Link>
             </span>
           </p>
         </div>

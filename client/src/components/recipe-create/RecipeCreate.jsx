@@ -5,14 +5,13 @@ import { useCreateRecipe } from "../../api/recipeApi.js";
 export default function RecipeCreate() {
   const navigate = useNavigate();
 
-const {create}= useCreateRecipe()
+  const { create: createRecipe } = useCreateRecipe();
 
   const submitAction = async (formData) => {
     const recipeData = Object.fromEntries(formData);
 
-    await create(recipeData);
-   
-   
+    await createRecipe(recipeData);
+
     navigate("/recipes");
   };
 
