@@ -1455,303 +1455,82 @@
     sessions: {},
   };
   var seedData = {
-    recipes: {
-      "3987279d-0ad4-4afb-8ca9-5b256ae3b298": {
+    recipe: [
+      {
         _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-        name: "Easy Lasagna",
-        img: "assets/lasagna.jpg",
-        ingredients: [
-          "1 tbsp Ingredient 1",
-          "2 cups Ingredient 2",
-          "500 g  Ingredient 3",
-          "25 g Ingredient 4",
-        ],
-        steps: ["Prepare ingredients", "Mix ingredients", "Cook until done"],
-        _createdOn: 1613551279012,
-      },
-      "8f414b4f-ab39-4d36-bedb-2ad69da9c830": {
-        _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-        name: "Grilled Duck Fillet",
-        img: "assets/roast.jpg",
-        ingredients: [
-          "500 g  Ingredient 1",
-          "3 tbsp Ingredient 2",
-          "2 cups Ingredient 3",
-        ],
-        steps: ["Prepare ingredients", "Mix ingredients", "Cook until done"],
-        _createdOn: 1613551344360,
-      },
-      "985d9eab-ad2e-4622-a5c8-116261fb1fd2": {
-        _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-        name: "Roast Trout",
-        img: "assets/fish.jpg",
-        ingredients: [
-          "4 cups Ingredient 1",
-          "1 tbsp Ingredient 2",
-          "1 tbsp Ingredient 3",
-          "750 g  Ingredient 4",
-          "25 g Ingredient 5",
-        ],
-        steps: ["Prepare ingredients", "Mix ingredients", "Cook until done"],
-        _createdOn: 1613551388703,
-      },
-    },
-    comments: {
-      "0a272c58-b7ea-4e09-a000-7ec988248f66": {
-        _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-        content: "Great recipe!",
-        recipeId: "8f414b4f-ab39-4d36-bedb-2ad69da9c830",
-        _createdOn: 1614260681375,
-        _id: "0a272c58-b7ea-4e09-a000-7ec988248f66",
-      },
-    },
-    records: {
-      i01: {
-        name: "John1",
-        val: 1,
-        _createdOn: 1613551388703,
-      },
-      i02: {
-        name: "John2",
-        val: 1,
-        _createdOn: 1613551388713,
-      },
-      i03: {
-        name: "John3",
-        val: 2,
-        _createdOn: 1613551388723,
-      },
-      i04: {
-        name: "John4",
-        val: 2,
-        _createdOn: 1613551388733,
-      },
-      i05: {
-        name: "John5",
-        val: 2,
-        _createdOn: 1613551388743,
-      },
-      i06: {
-        name: "John6",
-        val: 3,
-        _createdOn: 1613551388753,
-      },
-      i07: {
-        name: "John7",
-        val: 3,
-        _createdOn: 1613551388763,
-      },
-      i08: {
-        name: "John8",
-        val: 2,
-        _createdOn: 1613551388773,
-      },
-      i09: {
-        name: "John9",
-        val: 3,
-        _createdOn: 1613551388783,
-      },
-      i10: {
-        name: "John10",
-        val: 1,
-        _createdOn: 1613551388793,
-      },
-    },
-    catches: {
-      "07f260f4-466c-4607-9a33-f7273b24f1b4": {
-        _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-        angler: "Paulo Admorim",
-        weight: 636,
-        species: "Atlantic Blue Marlin",
-        location: "Vitoria, Brazil",
-        bait: "trolled pink",
-        captureTime: 80,
-        _createdOn: 1614760714812,
-        _id: "07f260f4-466c-4607-9a33-f7273b24f1b4",
-      },
-      "bdabf5e9-23be-40a1-9f14-9117b6702a9d": {
-        _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-        angler: "John Does",
-        weight: 554,
-        species: "Atlantic Blue Marlin",
-        location: "Buenos Aires, Argentina",
-        bait: "trolled pink",
-        captureTime: 120,
-        _createdOn: 1614760782277,
-        _id: "bdabf5e9-23be-40a1-9f14-9117b6702a9d",
-      },
-    },
-    furniture: {},
-    orders: {},
-    movies: {
-      "1240549d-f0e0-497e-ab99-eb8f703713d7": {
-        _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-        title: "Black Widow",
+        title: "Chicken Crispy fingers",
         description:
-          "Natasha Romanoff aka Black Widow confronts the darker parts of her ledger when a dangerous conspiracy with ties to her past arises. Comes on the screens 2020.",
-        img: "https://miro.medium.com/max/735/1*akkAa2CcbKqHsvqVusF3-w.jpeg",
-        _createdOn: 1614935055353,
-        _id: "1240549d-f0e0-497e-ab99-eb8f703713d7",
+          "Cut chicken into strips, season with salt, pepper, and garlic powder...",
+        image: "https://encrypted-tbn0.gstatic.com/images...",
+        _createdOn: 1743268323886,
+        _id: "62074704-5b5b-4b1f-b0d1-920b0d1f699b",
       },
-      "143e5265-333e-4150-80e4-16b61de31aa0": {
-        _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-        title: "Wonder Woman 1984",
-        description:
-          "Diana must contend with a work colleague and businessman, whose desire for extreme wealth sends the world down a path of destruction, after an ancient artifact that grants wishes goes missing.",
-        img: "https://pbs.twimg.com/media/ETINgKwWAAAyA4r.jpg",
-        _createdOn: 1614935181470,
-        _id: "143e5265-333e-4150-80e4-16b61de31aa0",
-      },
-      "a9bae6d8-793e-46c4-a9db-deb9e3484909": {
+
+      {
         _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-        title: "Top Gun 2",
+        title: "Vegetable Stir Fry",
         description:
-          "After more than thirty years of service as one of the Navy's top aviators, Pete Mitchell is where he belongs, pushing the envelope as a courageous test pilot and dodging the advancement in rank that would ground him.",
-        img: "https://i.pinimg.com/originals/f2/a4/58/f2a458048757bc6914d559c9e4dc962a.jpg",
-        _createdOn: 1614935268135,
-        _id: "a9bae6d8-793e-46c4-a9db-deb9e3484909",
+          "Heat the oil in a pan and sauté the garlic and ginger for a few seconds. Add the onion, carrots, and bell pepper, stir, and cook for 2-3 minutes. Then, add the zucchini and broccoli, stirring for a few more minutes. Pour in the soy sauce, add the honey and dissolved cornstarch, mix well, and let it thicken slightly. Serve warm, garnished with sesame seeds or fresh herbs.",
+        image:
+          "https://as2.ftcdn.net/v2/jpg/02/55/72/09/1000_F_255720974_LwbSsbWusIrwvB8LBaMZBmSkBjkdVkCg.jpg",
+        _createdOn: 1743269393738,
+        _id: "993997f3-9682-494b-86f1-d493139ba71f",
       },
-    },
-    likes: {},
-    ideas: {
-      "833e0e57-71dc-42c0-b387-0ce0caf5225e": {
-        _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-        title: "Best Pilates Workout To Do At Home",
+
+      {
+        ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
+        title: "Spaghetti Bolognese",
         description:
-          "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima possimus eveniet ullam aspernatur corporis tempore quia nesciunt nostrum mollitia consequatur. At ducimus amet aliquid magnam nulla sed totam blanditiis ullam atque facilis corrupti quidem nisi iusto saepe, consectetur culpa possimus quos? Repellendus, dicta pariatur! Delectus, placeat debitis error dignissimos nesciunt magni possimus quo nulla, fuga corporis maxime minus nihil doloremque aliquam quia recusandae harum. Molestias dolorum recusandae commodi velit cum sapiente placeat alias rerum illum repudiandae? Suscipit tempore dolore autem, neque debitis quisquam molestias officia hic nesciunt? Obcaecati optio fugit blanditiis, explicabo odio at dicta asperiores distinctio expedita dolor est aperiam earum! Molestias sequi aliquid molestiae, voluptatum doloremque saepe dignissimos quidem quas harum quo. Eum nemo voluptatem hic corrupti officiis eaque et temporibus error totam numquam sequi nostrum assumenda eius voluptatibus quia sed vel, rerum, excepturi maxime? Pariatur, provident hic? Soluta corrupti aspernatur exercitationem vitae accusantium ut ullam dolor quod!",
-        img: "./images/best-pilates-youtube-workouts-2__medium_4x3.jpg",
-        _createdOn: 1615033373504,
-        _id: "833e0e57-71dc-42c0-b387-0ce0caf5225e",
+          "Prepare the base: Heat olive oil in a large pan over medium heat. Add the chopped onion, garlic, and carrot. Sauté for about 5 minutes until softened.  Cook the meat: Add the ground beef, breaking it apart with a spoon. Cook until browned and no longer pink.  Add tomato flavor: Stir in the tomato paste and cook for 1-2 minutes to deepen the flavor.  Simmer the sauce: Pour in the crushed tomatoes and beef broth (or red wine). Add oregano, basil, salt, pepper, and sugar (if using). Stir well and let simmer for at least 30 minutes, stirring occasionally.  Cook the spaghetti: While the sauce simmers, bring a large pot of salted water to a boil. Cook the spaghetti according to package instructions until al dente. Drain and set aside.  Combine and serve: Toss the spaghetti with the Bolognese sauce or serve the sauce on top. Garnish with Parmesan cheese and fresh basil.",
+        image:
+          "https://images.immediate.co.uk/production/volatile/sites/30/2013/05/Puttanesca-fd5810c.jpg?quality=90&webp=true&resize=300,272",
+        _createdOn: 1743270236667,
+        _id: "a620faec-4e32-45dc-a5cb-b4701b539e2a",
       },
-      "247efaa7-8a3e-48a7-813f-b5bfdad0f46c": {
+
+      {
         _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-        title: "4 Eady DIY Idea To Try!",
+        title: "New York Cheesecake",
         description:
-          "Similique rem culpa nemo hic recusandae perspiciatis quidem, quia expedita, sapiente est itaque optio enim placeat voluptates sit, fugit dignissimos tenetur temporibus exercitationem in quis magni sunt vel. Corporis officiis ut sapiente exercitationem consectetur debitis suscipit laborum quo enim iusto, labore, quod quam libero aliquid accusantium! Voluptatum quos porro fugit soluta tempore praesentium ratione dolorum impedit sunt dolores quod labore laudantium beatae architecto perspiciatis natus cupiditate, iure quia aliquid, iusto modi esse!",
-        img: "./images/brightideacropped.jpg",
-        _createdOn: 1615033452480,
-        _id: "247efaa7-8a3e-48a7-813f-b5bfdad0f46c",
+          "Prepare the crust:  Preheat oven to 160°C (320°F).  Mix crushed biscuits with melted butter and sugar.  Press the mixture firmly into the bottom of a springform pan.  Bake for 10 minutes, then let it cool.  Make the filling:  In a large bowl, beat the cream cheese until smooth.  Add sugar and mix well.  Add eggs one at a time, mixing gently after each.  Stir in vanilla, heavy cream (or sour cream), and cornstarch (if using).  Bake the cheesecake:  Pour the filling over the crust.  Bake in a water bath (place the pan in a larger pan filled with hot water) at 160°C (320°F) for 50-60 minutes, or until the center is slightly wobbly.  Turn off the oven and let the cheesecake cool inside for 1 hour.  Chill and serve:  Refrigerate for at least 4 hours (preferably overnight).  Top with fruit, caramel, or chocolate sauce before serving.",
+        image:
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDYB7V8qbyHItrjWfssGg64MrFbrXTkutmVw&s",
+        _createdOn: 1743270357704,
+        _id: "da6a1b71-a442-4248-8f30-137b8aa54c57",
       },
-      "b8608c22-dd57-4b24-948e-b358f536b958": {
-        _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-        title: "Dinner Recipe",
+      {
+        _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
+        title: "Whole Wheat Bread",
         description:
-          "Consectetur labore et corporis nihil, officiis tempora, hic ex commodi sit aspernatur ad minima? Voluptas nesciunt, blanditiis ex nulla incidunt facere tempora laborum ut aliquid beatae obcaecati quidem reprehenderit consequatur quis iure natus quia totam vel. Amet explicabo quidem repellat unde tempore et totam minima mollitia, adipisci vel autem, enim voluptatem quasi exercitationem dolor cum repudiandae dolores nostrum sit ullam atque dicta, tempora iusto eaque! Rerum debitis voluptate impedit corrupti quibusdam consequatur minima, earum asperiores soluta. A provident reiciendis voluptates et numquam totam eveniet! Dolorum corporis libero dicta laborum illum accusamus ullam?",
-        img: "./images/dinner.jpg",
-        _createdOn: 1615033491967,
-        _id: "b8608c22-dd57-4b24-948e-b358f536b958",
+          "Mix Ingredients:  In a large bowl, combine whole wheat flour, salt, and baking powder (if using).  Add warm water and olive oil.  Mix until a rough dough forms.  Knead the Dough:  Transfer to a floured surface and knead for about 5-7 minutes until smooth.  If sticky, add a little more flour; if dry, add a teaspoon of water at a time.  Rest the Dough:  Cover with a damp cloth and let it rest for 30 minutes to improve elasticity.",
+        image:
+          "https://gourmetdoneskinny.com/wp-content/uploads/2021/04/Stone-Ground-Bread-final-1200.jpg",
+        _createdOn: 1743270402160,
+        _id: "88f2fbd2-08b1-4a6f-b0a0-3c55d026c16f",
       },
-    },
-    catalog: {
-      "53d4dbf5-7f41-47ba-b485-43eccb91cb95": {
-        _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-        make: "Table",
-        model: "Swedish",
-        year: 2015,
-        description: "Medium table",
-        price: 235,
-        img: "./images/table.png",
-        material: "Hardwood",
-        _createdOn: 1615545143015,
-        _id: "53d4dbf5-7f41-47ba-b485-43eccb91cb95",
-      },
-      "f5929b5c-bca4-4026-8e6e-c09e73908f77": {
-        _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-        make: "Sofa",
-        model: "ES-549-M",
-        year: 2018,
-        description: "Three-person sofa, blue",
-        price: 1200,
-        img: "./images/sofa.jpg",
-        material: "Frame - steel, plastic; Upholstery - fabric",
-        _createdOn: 1615545572296,
-        _id: "f5929b5c-bca4-4026-8e6e-c09e73908f77",
-      },
-      "c7f51805-242b-45ed-ae3e-80b68605141b": {
-        _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-        make: "Chair",
-        model: "Bright Dining Collection",
-        year: 2017,
-        description: "Dining chair",
-        price: 180,
-        img: "./images/chair.jpg",
-        material: "Wood laminate; leather",
-        _createdOn: 1615546332126,
-        _id: "c7f51805-242b-45ed-ae3e-80b68605141b",
-      },
-    },
-    teams: {
-      "34a1cab1-81f1-47e5-aec3-ab6c9810efe1": {
-        _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-        name: "Storm Troopers",
-        logoUrl: "/assets/atat.png",
-        description: "These ARE the droids we're looking for",
-        _createdOn: 1615737591748,
-        _id: "34a1cab1-81f1-47e5-aec3-ab6c9810efe1",
-      },
-      "dc888b1a-400f-47f3-9619-07607966feb8": {
-        _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-        name: "Team Rocket",
-        logoUrl: "/assets/rocket.png",
-        description: "Gotta catch 'em all!",
-        _createdOn: 1615737655083,
-        _id: "dc888b1a-400f-47f3-9619-07607966feb8",
-      },
-      "733fa9a1-26b6-490d-b299-21f120b2f53a": {
-        _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-        name: "Minions",
-        logoUrl: "/assets/hydrant.png",
-        description:
-          "Friendly neighbourhood jelly beans, helping evil-doers succeed.",
-        _createdOn: 1615737688036,
-        _id: "733fa9a1-26b6-490d-b299-21f120b2f53a",
-      },
-    },
-    members: {
-      "cc9b0a0f-655d-45d7-9857-0a61c6bb2c4d": {
-        _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-        teamId: "34a1cab1-81f1-47e5-aec3-ab6c9810efe1",
-        status: "member",
-        _createdOn: 1616236790262,
-        _updatedOn: 1616236792930,
-      },
-      "61a19986-3b86-4347-8ca4-8c074ed87591": {
-        _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-        teamId: "dc888b1a-400f-47f3-9619-07607966feb8",
-        status: "member",
-        _createdOn: 1616237188183,
-        _updatedOn: 1616237189016,
-      },
-      "8a03aa56-7a82-4a6b-9821-91349fbc552f": {
-        _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-        teamId: "733fa9a1-26b6-490d-b299-21f120b2f53a",
-        status: "member",
-        _createdOn: 1616237193355,
-        _updatedOn: 1616237195145,
-      },
-      "9be3ac7d-2c6e-4d74-b187-04105ab7e3d6": {
-        _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-        teamId: "dc888b1a-400f-47f3-9619-07607966feb8",
-        status: "member",
-        _createdOn: 1616237231299,
-        _updatedOn: 1616237235713,
-      },
-      "280b4a1a-d0f3-4639-aa54-6d9158365152": {
+      {
         _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-        teamId: "dc888b1a-400f-47f3-9619-07607966feb8",
-        status: "member",
-        _createdOn: 1616237257265,
-        _updatedOn: 1616237278248,
+        title: "Bulgarian Shopska salad",
+        description:
+          "Prepare the vegetables:Wash and chop the tomatoes, cucumber, red bell pepper, and red onion into small, bite-sized pieces.  Assemble the salad:  In a large bowl, combine the tomatoes, cucumber, bell pepper, and onion.  Add the cheese:  Crumble the feta cheese over the top of the salad. You can either crumble it by hand or cut it into small cubes.  Dress the salad:    Drizzle the olive oil and red wine vinegar (or lemon juice) over the salad. Season with salt and pepper to taste.  Toss and garnish:  Gently toss the salad to combine all the ingredients. Garnish with fresh parsley or dill if desired.  Serve:  Serve immediately as a refreshing side dish to your main meal. Shopska salad is traditionally served with a piece of bread and a cold drink, often accompanying grilled meats.",
+        image:
+          "https://hotelsimona.com/wp-content/uploads/2020/03/bulgarian-traditional-salad-2157208_1920.jpg",
+        _createdOn: 1743270490360,
+        _id: "afddb509-0b7c-4c23-9d39-d375b9782f18",
       },
-      "e797fa57-bf0a-4749-8028-72dba715e5f8": {
-        _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-        teamId: "34a1cab1-81f1-47e5-aec3-ab6c9810efe1",
-        status: "member",
-        _createdOn: 1616237272948,
-        _updatedOn: 1616237293676,
+      {
+        _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
+        title: "Easy Lasagna",
+        description:
+          "Make the sauce:  Heat a large pan over medium heat and brown the ground beef with the chopped onion and garlic until the meat is fully cooked. Drain excess fat if needed.  Stir in the crushed tomatoes, tomato paste, sugar (optional), oregano, basil, and salt and pepper.  Add red wine (if using) and bring the mixture to a simmer. Let it cook for 30-45 minutes, stirring occasionally. Taste and adjust seasoning if needed.  Prepare the cheese mixture:  In a large bowl, mix the ricotta cheese, 2 cups of mozzarella, Parmesan, egg, parsley, and season with salt and pepper.  Cook the lasagna noodles:  If using regular noodles, cook them according to the package instructions, drain, and set aside. If using no-boil noodles, you can skip this step.  Assemble the lasagna:  Preheat the oven to 375°F (190°C).  Spread a thin layer of sauce at the bottom of a 9x13-inch baking dish.  Place a layer of lasagna noodles on top of the sauce.  Spread some of the ricotta cheese mixture over the noodles, then top with more sauce.  Repeat the layers until you’ve used up the ingredients, finishing with a layer of sauce on top.  Sprinkle the remaining mozzarella cheese on top.  Bake:  Cover the baking dish with aluminum foil (tenting it so it doesn't touch the cheese) and bake for 25 minutes.  Remove the foil and bake for an additional 25-30 minutes until the top is golden and bubbly.  Let the lasagna sit for about 10 minutes before slicing.",
+        image:
+          "https://www.southernliving.com/thmb/aF5ditmc5n-HNd-uUKh7dZyjezc=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Extra_Easy_Lasagna_006_4x3-41b0a478514c43e9baed0659bd362625.jpg",
+        _createdOn: 1743270432987,
+        _id: "8b96fff9-d726-45a8-a369-0fb1f265c7cb",
       },
-    },
+    ],
   };
+
   var rules$1 = {
     users: {
       ".create": false,
