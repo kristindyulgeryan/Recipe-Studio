@@ -5,8 +5,9 @@ import { useRecipes } from "../../api/recipeApi.js";
 export default function RecipeGallery({ searchResults }) {
   const { recipes } = useRecipes();
 
-  const displayedRecipes = searchResults !== null ? searchResults : recipes;
+  const displayedRecipes = searchResults || recipes;
   const isSearchActive = searchResults !== null;
+
   return (
     <section className="py-5 service-sec">
       <div className="container">

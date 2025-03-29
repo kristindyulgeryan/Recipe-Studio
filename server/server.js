@@ -1458,16 +1458,6 @@
     recipe: [
       {
         _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-        title: "Chicken Crispy fingers",
-        description:
-          "Cut chicken into strips, season with salt, pepper, and garlic powder...",
-        image: "https://encrypted-tbn0.gstatic.com/images...",
-        _createdOn: 1743268323886,
-        _id: "62074704-5b5b-4b1f-b0d1-920b0d1f699b",
-      },
-
-      {
-        _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
         title: "Vegetable Stir Fry",
         description:
           "Heat the oil in a pan and sauté the garlic and ginger for a few seconds. Add the onion, carrots, and bell pepper, stir, and cook for 2-3 minutes. Then, add the zucchini and broccoli, stirring for a few more minutes. Pour in the soy sauce, add the honey and dissolved cornstarch, mix well, and let it thicken slightly. Serve warm, garnished with sesame seeds or fresh herbs.",
@@ -1527,6 +1517,29 @@
           "https://www.southernliving.com/thmb/aF5ditmc5n-HNd-uUKh7dZyjezc=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Extra_Easy_Lasagna_006_4x3-41b0a478514c43e9baed0659bd362625.jpg",
         _createdOn: 1743270432987,
         _id: "8b96fff9-d726-45a8-a369-0fb1f265c7cb",
+      },
+    ],
+    comments: [
+      {
+        _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
+        recipeId: "4",
+        comment: "Great recipe👌👌👌👌👌👌",
+        _createdOn: 1743272773410,
+        _id: "25b51ba8-f9d8-482a-938a-2bcfec438dc6",
+      },
+      {
+        _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
+        recipeId: "5",
+        comment: "Perfect for summer! Light, fresh, and full of flavor.❤️❤️❤️",
+        _createdOn: 1743273085418,
+        _id: "df69eccb-1e1a-4e2e-9992-183d204f8b44",
+      },
+      {
+        _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+        recipeId: "5",
+        comment: "Yes, Simple ingredients, but an amazing taste! 💕",
+        _createdOn: 1743273148425,
+        _id: "337c80c5-b591-4795-bf6b-8e8946deff47",
       },
     ],
   };
