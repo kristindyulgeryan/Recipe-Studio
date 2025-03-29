@@ -1,9 +1,7 @@
 import { Navigate, useNavigate, useParams } from "react-router";
 import { useEditRecipe, useRecipe } from "../../api/recipeApi.js";
-import useAuth from "../../hooks/useAuth.js";
 
 export default function RecipeEdit() {
-  const { userId } = useAuth();
   const navigate = useNavigate();
   const { recipeId } = useParams();
   const { recipe } = useRecipe(recipeId);
@@ -11,20 +9,23 @@ export default function RecipeEdit() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const formData = new FormData(e.target);
+    const recipeData = Object.fromEntries(formData);
+
     try {
-      const formData = new FormData(e.target);
-      const recipeData = Object.fromEntries(formData);
-      await edit(recipeId, recipeData);
+      const updateData = {
+        title: recipeData.title,
+        description: recipeData.description,
+        image: recipeData.image,
+      };
+
+      await edit(recipeId, updateData);
       navigate(`/recipes/${recipeId}/details`);
     } catch (error) {
-      console.error("Failed to edit recipe:", error);
+      console.error("Update failed:", error);
+      alert(`Update failed: ${error.message}`);
     }
   };
-
-  const isOwner = userId === recipe._ownerId;
-  if (!isOwner) {
-    return <Navigate to="/recipes" />;
-  }
 
   return (
     <section id="edit-form">
