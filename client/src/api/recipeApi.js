@@ -1,10 +1,4 @@
-import {
-  useCallback,
-  useEffect,
-  useOptimistic,
-  useState,
-  useTransition,
-} from "react";
+import { useCallback, useEffect, useState } from "react";
 import useAuth from "../hooks/useAuth.js";
 import request from "../utils/request.js";
 
@@ -12,34 +6,16 @@ const baseUrl = "http://localhost:3030/data/recipe";
 
 export const useRecipes = () => {
   const [recipes, setRecipes] = useState([]);
-  const [refreshTrigger, setRefreshTrigger] = useState(0);
-
-  const refreshRecipes = useCallback(() => {
-    setRefreshTrigger((prev) => prev + 1);
-  }, []);
-
-  const addNewRecipe = useCallback((newRecipe) => {
-    setRecipes((prev) => [newRecipe, ...prev]);
-  }, []);
 
   useEffect(() => {
-    const searchParams = new URLSearchParams({
-      sortBy: "_createdOn desc",
-    });
-
     request
-      .get(`${baseUrl}?${searchParams.toString()}`)
+      .get(`${baseUrl}?sortBy=_createdOn desc`)
       .then(setRecipes)
       .catch(console.error);
-  }, [refreshTrigger]);
+  }, []);
 
-  return {
-    recipes,
-    refreshRecipes,
-    addNewRecipe,
-  };
+  return { recipes };
 };
-
 export const useRecipe = (recipeId) => {
   const [recipe, setRecipe] = useState({});
 
@@ -54,7 +30,13 @@ export const useRecipe = (recipeId) => {
 
 export const useCreateRecipe = () => {
   const { request } = useAuth();
-  const create = (recipeData) => request.post(baseUrl, recipeData);
+
+  const create = async (recipeData) => {
+    const response = await request.post(baseUrl, recipeData);
+    console.log("Create response:", response);
+    return response;
+  };
+
   return {
     create,
   };
@@ -63,15 +45,20 @@ export const useCreateRecipe = () => {
 export const useEditRecipe = () => {
   const { request } = useAuth();
 
-  const edit = (recipeId, recipeData) =>
-    request.put(`${baseUrl}/${recipeId}`, {
-      ...recipeData,
-      _id: recipeId,
-    });
-
-  return {
-    edit,
+  const edit = async (recipeId, recipeData) => {
+    try {
+      const response = await request.put(`${baseUrl}/${recipeId}`, recipeData);
+      return response;
+    } catch (error) {
+      console.error("Edit failed:", {
+        status: error.response?.status,
+        data: error.response?.data,
+      });
+      throw error;
+    }
   };
+
+  return { edit };
 };
 
 export const useDeleteRecipe = () => {
@@ -84,75 +71,130 @@ export const useDeleteRecipe = () => {
   };
 };
 
+// export const useSearchRecipes = () => {
+//   const [query, setQuery] = useState("");
+//   const [results, setResults] = useState([]);
+//   const [loading, setLoading] = useState(false);
+//   const [error, setError] = useState(null);
+//   const [isPending, startTransition] = useTransition();
+
+//   const [optimisticResults] = useOptimistic(
+//     results,
+//     (currentResults, newQuery) => {
+//       return loading
+//         ? currentResults.filter((r) =>
+//             r.title.toLowerCase().includes(newQuery.toLowerCase())
+//           )
+//         : currentResults;
+//     }
+//   );
+
+//   const addNewRecipe = useCallback((newRecipe) => {
+//     setResults((prevResults) => {
+//       const safePrevResults = Array.isArray(prevResults) ? prevResults : [];
+//       return [newRecipe, ...safePrevResults].sort(
+//         (a, b) => new Date(b._createdOn) - new Date(a._createdOn)
+//       );
+//     });
+//   }, []);
+
+//   const performSearch = useCallback(async (searchQuery) => {
+//     startTransition(async () => {
+//       try {
+//         setLoading(true);
+//         let url = `${baseUrl}?sortBy=_createdOn%20desc&pageSize=13`;
+
+//         if (searchQuery.trim()) {
+//           url += `&where=${encodeURIComponent(`title LIKE "${searchQuery}"`)}`;
+//         }
+
+//         const data = await request.get(url);
+//         setResults(data);
+//       } catch (err) {
+//         setError(err.message || "Failed to fetch recipes");
+//       } finally {
+//         setLoading(false);
+//       }
+//     });
+//   }, []);
+
+//   //  reset to all recipes
+//   const showAllRecipes = useCallback(() => {
+//     setQuery("");
+//     performSearch(""); // Force fetch all recipes
+//   }, [performSearch]);
+
+//   useEffect(() => {
+//     const timer = setTimeout(() => {
+//       performSearch(query);
+//     }, 300);
+
+//     return () => clearTimeout(timer);
+//   }, [query, performSearch]);
+
+//   return {
+//     query,
+//     setQuery: (newQuery) => startTransition(() => setQuery(newQuery)),
+//     results: optimisticResults,
+//     loading: loading || isPending,
+//     error,
+//     addNewRecipe,
+//     refresh: () => performSearch(query),
+//     showAllRecipes,
+//   };
+// };
+
 export const useSearchRecipes = () => {
   const [query, setQuery] = useState("");
-  const [results, setResults] = useState([]);
+  const [searchResults, setSearchResults] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [isPending, startTransition] = useTransition();
-
-  const [optimisticResults] = useOptimistic(
-    results,
-    (currentResults, newQuery) => {
-      return loading
-        ? currentResults.filter((r) =>
-            r.title.toLowerCase().includes(newQuery.toLowerCase())
-          )
-        : currentResults;
-    }
-  );
-
-  const addNewRecipe = useCallback((newRecipe) => {
-    setResults((prevResults) => {
-      const updatedResults = [newRecipe, ...prevResults];
-      return updatedResults.sort(
-        (a, b) => new Date(b._createdOn) - new Date(a._createdOn)
-      );
-    });
-  }, []);
 
   const performSearch = useCallback(async (searchQuery) => {
-    startTransition(async () => {
-      try {
-        setLoading(true);
-        let url = `${baseUrl}?sortBy=_createdOn%20desc`;
+    try {
+      setLoading(true);
+      const params = new URLSearchParams({
+        sortBy: "_createdOn desc",
+        pageSize: 100,
+        ...(searchQuery.trim() && {
+          where: `title LIKE "${searchQuery.trim()}"`,
+        }),
+      });
 
-        if (searchQuery.trim()) {
-          url += `&where=${encodeURIComponent(`title LIKE "${searchQuery}"`)}`;
-        }
-
-        const data = await request.get(url);
-        setResults(data);
-      } catch (err) {
-        setError(err.message || "Failed to fetch recipes");
-      } finally {
-        setLoading(false);
-      }
-    });
+      const data = await request.get(`${baseUrl}?${params}`);
+      return data;
+    } catch (err) {
+      setError(err.message || "Failed to fetch recipes");
+      return null;
+    } finally {
+      setLoading(false);
+    }
   }, []);
 
-  //  reset to all recipes
-  const showAllRecipes = useCallback(() => {
-    setQuery(""); // Clear the query
-    performSearch(""); // Force fetch all recipes
-  }, [performSearch]);
+  const clearSearch = useCallback(() => {
+    setQuery("");
+    setSearchResults(null);
+  }, []);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      performSearch(query);
-    }, 500);
+    const timer = setTimeout(async () => {
+      if (query.trim() === "") {
+        clearSearch();
+      } else {
+        const results = await performSearch(query);
+        setSearchResults(results);
+      }
+    }, 300);
 
     return () => clearTimeout(timer);
-  }, [query, performSearch]);
+  }, [query, performSearch, clearSearch]);
 
   return {
     query,
-    setQuery: (newQuery) => startTransition(() => setQuery(newQuery)),
-    results: optimisticResults,
-    loading: loading || isPending,
+    setQuery,
+    searchResults,
+    isLoading: loading,
     error,
-    addNewRecipe,
-    refresh: () => performSearch(query),
-    showAllRecipes,
+    clearSearch,
   };
 };

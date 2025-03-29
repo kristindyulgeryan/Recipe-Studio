@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router";
-
+import { useState } from "react";
 import UserProvider from "./providers/UserProvider.jsx";
 import Header from "./components/header/Header.jsx";
 import Home from "./components/home/Home.jsx";
@@ -13,12 +13,12 @@ import RecipeDetails from "./components/recipe-details/RecipeDetails.jsx";
 import RecipeEdit from "./components/recipe-edit/RecipeEdit.jsx";
 import Logout from "./components/logout/Logout.jsx";
 import AuthGuard from "./components/guards/AuthGuards.jsx";
-import "./style/style.css";
-import { useState } from "react";
 import Contact from "./components/contact/Contact.jsx";
+import "./style/style.css";
 
 function App() {
   const [searchResults, setSearchResults] = useState(null);
+
   return (
     <UserProvider>
       <>

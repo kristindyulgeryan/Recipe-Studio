@@ -57,7 +57,19 @@ export default function RecipeDetails() {
     addComment({ ...commentResult, author: { username } });
   };
 
-  const isOwner = userId === recipe._ownerId;
+  const isOwner =
+    userId &&
+    recipe?._ownerId &&
+    userId.toString() === recipe._ownerId.toString();
+  console.log("Ownership check:", {
+    userId,
+    ownerId: recipe?._ownerId,
+    types: {
+      userIdType: typeof userId,
+      ownerIdType: typeof recipe?._ownerId,
+    },
+    isOwner,
+  });
 
   return (
     <section id="recipe-details">
@@ -82,6 +94,7 @@ export default function RecipeDetails() {
                 <Link
                   to={`/recipes/${recipeId}/edit`}
                   className="button edit-button"
+                  state={{ fromDetails: true }}
                 >
                   Edit Recipe
                 </Link>

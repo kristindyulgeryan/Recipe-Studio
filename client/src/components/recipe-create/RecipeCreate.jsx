@@ -1,12 +1,10 @@
 import { useNavigate } from "react-router";
 
-import { useCreateRecipe, useRecipes } from "../../api/recipeApi.js";
+import { useCreateRecipe } from "../../api/recipeApi.js";
 
 export default function RecipeCreate() {
   const navigate = useNavigate();
   const { create } = useCreateRecipe();
-
-  const { refreshRecipes } = useRecipes();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -15,11 +13,10 @@ export default function RecipeCreate() {
 
     try {
       await create(recipeData);
-      await refreshRecipes(); // This will trigger a reload of all recipes
-      navigate(`/recipes`);
+      navigate("/recipes");
     } catch (error) {
       console.error("Creation failed:", error);
-      // You can add state to show error messages to users
+      alert("Грешка при създаване на рецепта!");
     }
   };
 

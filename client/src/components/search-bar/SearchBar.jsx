@@ -1,65 +1,88 @@
-import { startTransition, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./SearchBar.module.css";
 
-// export default function SearchBar() {
+import { useSearchRecipes } from "../../api/recipeApi";
+
+// export default function SearchBar({ onSearchResults }) {
 //   const [isActive, setIsActive] = useState(false);
-//   const [searchTerm, setSearchTerm] = useState("");
+//   const { query, setQuery, searchResults, clearSearch } = useSearchRecipes();
 
 //   const handleToggle = () => {
-//     setIsActive((prev) => !prev);
+//     setIsActive((prev) => {
+//       if (!prev) {
+//         // When activating search
+//         return true;
+//       } else {
+//         // When deactivating search
+//         clearSearch();
+//         onSearchResults?.(null);
+//         return false;
+//       }
+//     });
 //   };
 
 //   const handleChange = (e) => {
-//     const value = e.target.value;
-//     setSearchTerm(value);
-
-//     console.log(value);
+//     setQuery(e.target.value);
 //   };
+
+//   useEffect(() => {
+//     if (onSearchResults) {
+//       onSearchResults(searchResults); // Changed from 'results' to 'searchResults'
+//     }
+//   }, [searchResults, onSearchResults]); // Changed from 'results' to 'searchResults'
 
 //   return (
 //     <div className={`${styles.container} ${isActive ? styles.active : ""}`}>
 //       <i
 //         className={`fa-solid fa-magnifying-glass ${styles.magnifier}`}
 //         onClick={handleToggle}
+//         aria-label={isActive ? "Close search" : "Open search"}
 //       ></i>
-//       <input
-//         type="text"
-//         className={styles.input}
-//         placeholder="Search..."
-//         value={searchTerm}
-//         onChange={handleChange}
-//       />
+//       {isActive && (
+//         <div className={styles.searchWrapper}>
+//           <input
+//             type="text"
+//             className={styles.input}
+//             placeholder="Search recipes..."
+//             value={query}
+//             onChange={handleChange}
+//             aria-label="Search recipes"
+//           />
+//         </div>
+//       )}
 //     </div>
 //   );
 // }
 
-import { useSearchRecipes } from "../../api/recipeApi";
-
 export default function SearchBar({ onSearchResults }) {
   const [isActive, setIsActive] = useState(false);
-  const { query, setQuery, results } = useSearchRecipes();
+  const { query, setQuery, searchResults, clearSearch } = useSearchRecipes();
 
   const handleToggle = () => {
-    startTransition(() => {
-      setIsActive((prev) => !prev);
-      if (!isActive) {
-        setQuery("");
-        onSearchResults?.(null);
+    setIsActive((prev) => {
+      if (!prev) {
+        // Activating search
+        return true;
+      } else {
+        // Deactivating search
+        clearSearch();
+        return false;
       }
     });
   };
 
   const handleChange = (e) => {
-    startTransition(() => {
-      setQuery(e.target.value);
-    });
+    setQuery(e.target.value);
   };
 
+  // Only notify parent when search is active
   useEffect(() => {
-    if (onSearchResults) {
-      onSearchResults(results);
+    if (isActive) {
+      onSearchResults?.(searchResults);
+    } else {
+      onSearchResults?.(null);
     }
-  }, [results, onSearchResults]);
+  }, [searchResults, isActive, onSearchResults]);
 
   return (
     <div className={`${styles.container} ${isActive ? styles.active : ""}`}>

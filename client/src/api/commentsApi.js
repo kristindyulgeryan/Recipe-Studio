@@ -26,16 +26,16 @@ export const useComments = (recipeId) => {
     });
 
     const options = accessToken
-    ? { headers: { "X-Authorization": accessToken } }
-    : {};
+      ? { headers: { "X-Authorization": accessToken } }
+      : {};
 
     request
-  .get(`${baseUrl}?${searchParams.toString()}`, null, options)
-  .then((result) => dispatch({ type: "GET_ALL", payload: result }))
-  .catch((err) => {
-    console.error("Error fetching comments:", err);
-    dispatch({ type: "GET_ALL", payload: [] }); 
-  });
+      .get(`${baseUrl}?${searchParams.toString()}`, null, options)
+      .then((result) => dispatch({ type: "GET_ALL", payload: result }))
+      .catch((err) => {
+        console.error("Error fetching comments:", err);
+        dispatch({ type: "GET_ALL", payload: [] });
+      });
   }, [recipeId, accessToken]);
 
   return {
