@@ -35,7 +35,6 @@ export default function RecipeDetails() {
     navigate("/recipes");
   };
 
-
   const commentCreatHandler = async (comment) => {
     // Optimistic update
     const newOptimisticComment = {
@@ -107,4 +106,3 @@ export default function RecipeDetails() {
     </section>
   );
 }
-

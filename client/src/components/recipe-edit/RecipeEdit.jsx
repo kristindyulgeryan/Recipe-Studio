@@ -9,11 +9,16 @@ export default function RecipeEdit() {
   const { recipe } = useRecipe(recipeId);
   const { edit } = useEditRecipe();
 
-  const formAction = async (formData) => {
-    const recipeData = Object.fromEntries(formData);
-    await edit(recipeId, recipeData);
-
-    navigate(`/recipes/${recipeId}/details`);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const formData = new FormData(e.target);
+      const recipeData = Object.fromEntries(formData);
+      await edit(recipeId, recipeData);
+      navigate(`/recipes/${recipeId}/details`);
+    } catch (error) {
+      console.error("Failed to edit recipe:", error);
+    }
   };
 
   const isOwner = userId === recipe._ownerId;
@@ -23,7 +28,7 @@ export default function RecipeEdit() {
 
   return (
     <section id="edit-form">
-      <form id="edit-form-container" action={formAction}>
+      <form id="edit-form-container" onSubmit={handleSubmit}>
         <div className="container">
           <h2>Edit Your Recipe</h2>
           <label htmlFor="recipe-title">Recipe Name:</label>

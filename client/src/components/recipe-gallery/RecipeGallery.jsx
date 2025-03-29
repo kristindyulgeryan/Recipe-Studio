@@ -2,9 +2,10 @@ import { Link } from "react-router";
 import { useRecipes } from "../../api/recipeApi.js";
 import CommentCount from "./CommentCount.jsx";
 
-// export default function RecipeGallery() {
+// export default function RecipeGallery({ searchResults }) {
 //   const { recipes } = useRecipes();
 
+// const displayedRecipes = searchResults || recipes;
 //   return (
 //     <section className="py-5 service-sec">
 //       <div className="container">
@@ -87,9 +88,9 @@ export default function RecipeGallery({ searchResults }) {
                     <img
                       src={recipe.image}
                       alt={recipe.title}
-                      onError={(e) => {
-                        e.target.src = "imgs/placeholder-recipe.jpg";
-                      }}
+                      // onError={(e) => {
+                      //   e.target.src = "imgs/placeholder-recipe.jpg";
+                      // }}
                     />
                   </div>
                   <div className="ser-text">

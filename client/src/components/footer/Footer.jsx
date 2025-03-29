@@ -7,7 +7,15 @@ export default function Footer() {
         <div className="footer-content">
           <p>
             &copy; 2025. All rights reserved by{" "}
-            <Link to="/">Recipe Studio</Link>
+            <Link to="/" style={{ fontStyle: "italic", marginLeft: "1rem" }}>
+              Recipe Studio
+            </Link>
+            <Link
+              to="/contact"
+              style={{ fontStyle: "italic", marginLeft: "1rem" }}
+            >
+              Contact Us
+            </Link>
           </p>
         </div>
       </div>

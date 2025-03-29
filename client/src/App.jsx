@@ -15,6 +15,7 @@ import Logout from "./components/logout/Logout.jsx";
 import AuthGuard from "./components/guards/AuthGuards.jsx";
 import "./style/style.css";
 import { useState } from "react";
+import Contact from "./components/contact/Contact.jsx";
 
 function App() {
   const [searchResults, setSearchResults] = useState(null);
@@ -26,7 +27,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-
+          <Route path="/contact" element={<Contact />} />
           <Route
             path="/recipes"
             element={<RecipeGallery searchResults={searchResults} />}
