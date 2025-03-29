@@ -1,23 +1,31 @@
 import { useNavigate } from "react-router";
 
-import { useCreateRecipe } from "../../api/recipeApi.js";
+import { useCreateRecipe, useRecipes } from "../../api/recipeApi.js";
 
 export default function RecipeCreate() {
   const navigate = useNavigate();
+  const { create } = useCreateRecipe();
 
-  const { create: createRecipe } = useCreateRecipe();
+  const { refreshRecipes } = useRecipes();
 
-  const submitAction = async (formData) => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
     const recipeData = Object.fromEntries(formData);
 
-    await createRecipe(recipeData);
-
-    navigate("/recipes");
+    try {
+      await create(recipeData);
+      await refreshRecipes(); // This will trigger a reload of all recipes
+      navigate(`/recipes`);
+    } catch (error) {
+      console.error("Creation failed:", error);
+      // You can add state to show error messages to users
+    }
   };
 
   return (
     <section id="recipe-form">
-      <form id="recipe-form-container" action={submitAction}>
+      <form id="recipe-form-container" onSubmit={handleSubmit}>
         <div className="container">
           <h2>Add Your Recipe</h2>
 

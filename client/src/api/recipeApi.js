@@ -12,17 +12,31 @@ const baseUrl = "http://localhost:3030/data/recipe";
 
 export const useRecipes = () => {
   const [recipes, setRecipes] = useState([]);
+  const [refreshTrigger, setRefreshTrigger] = useState(0);
+
+  const refreshRecipes = useCallback(() => {
+    setRefreshTrigger((prev) => prev + 1);
+  }, []);
+
+  const addNewRecipe = useCallback((newRecipe) => {
+    setRecipes((prev) => [newRecipe, ...prev]);
+  }, []);
 
   useEffect(() => {
     const searchParams = new URLSearchParams({
       sortBy: "_createdOn desc",
     });
 
-    request.get(`${baseUrl}?${searchParams.toString()}`).then(setRecipes);
-  }, []);
+    request
+      .get(`${baseUrl}?${searchParams.toString()}`)
+      .then(setRecipes)
+      .catch(console.error);
+  }, [refreshTrigger]);
 
   return {
     recipes,
+    refreshRecipes,
+    addNewRecipe,
   };
 };
 
