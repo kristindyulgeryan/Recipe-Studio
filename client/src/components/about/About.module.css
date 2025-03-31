@@ -1,147 +1,137 @@
 .aboutSec {
-   padding: 50px 0;
-   position: relative;
-  
+  padding: 50px 0;
+  position: relative;
 }
 
 .about {
-
-    background-color: rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(10px);
-    padding: 50px 0;
-    position: relative;    
-    overflow: hidden; 
-    text-align: center;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  padding: 50px 0;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
 }
 
-.aboutImg  {
-    position: relative;
-    width: 80%;
-    height: auto;
-    aspect-ratio: 1/1.4;
-    overflow: hidden;
-    border-radius: 10px;
-    margin: 0 auto 30px;
+.aboutImg {
+  position: relative;
+  width: 80%;
+  height: auto;
+  aspect-ratio: 1/1.4;
+  overflow: hidden;
+  border-radius: 10px;
+  margin: 0 auto 30px;
 }
 
-.galleryImage{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: inherit;
-    transition: transform 0.1s ease;
-    will-change: transform;
+.galleryImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+  transition: transform 0.05s ease;
 }
 
 .titleP {
-    display: flex;
-    gap: 10px;
-    color: var(--primary-clr);
-    font-size: 17px;
-    font-weight: 600;
-    margin: 0;
+  display: flex;
+  gap: 10px;
+  color: #fff;
+  font-size: 35px;
+  font-weight: 500;
+  margin: 0;
 }
-
-
 
 .titleH {
-    color: var(--secondary-clr);
-    font-size: clamp(28px, 5vw, 38px);
-    margin: 15px 20px;
-    margin-left: 5px;
+  color: var(--secondary-clr);
+  font-size: clamp(28px, 5vw, 38px);
+  margin: 15px 20px;
+  margin-left: 5px;
 }
-
 
 .descriptions {
-    position: relative;
-    min-height: 200px;
-    width: 100%;
-    margin: 0 auto;
-  }
-  
-  .descriptions p {
-    position: absolute;
-    width: 100%;
-    max-width: 320px;
-    left: 50%;
-    transform: translateX(-50%);
-    margin: 15px 0;
-    padding: 0 20px;
-    line-height: 1.6;
-    font-weight: 600;
-    text-align: center;
-    box-sizing: border-box;
-  }
-
-
-.activeImg{
-    opacity: 1;
-    z-index: 1;
+  position: relative;
+  min-height: 200px;
+  width: 100%;
+  margin: 0 auto;
 }
 
-.inactiveImg{
-    opacity: 0.5;
-    z-index: -1;
+.descriptions p {
+  position: absolute;
+  width: 100%;
+  max-width: 320px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 15px 0;
+  padding: 0 20px;
+  line-height: 1.5;
+  color: #fff;
+  font-size: 25px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.activeImg {
+  opacity: 1;
+  z-index: 1;
+}
+
+.inactiveImg {
+  opacity: 0.5;
+  z-index: -1;
 }
 
 .activeDesc {
-    opacity: 1;
-    visibility: visible;
-   
+  opacity: 1;
+  visibility: visible;
 }
 
 .inactiveDesc {
-    opacity: 0;
-    visibility: hidden;
-    
+  opacity: 0;
+  visibility: hidden;
 }
 
 .arrowContainer {
-    position: absolute;
-    bottom: 0.1rem; 
-    left: 50%;
-    transform: translateX(-50%);
-    transform: translateY(-50%);
-    display: flex;
-    gap: 1.25rem; 
-    z-index: 10; 
+  position: absolute;
+  bottom: 0.1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  transform: translateY(-50%);
+  display: flex;
+  gap: 1.25rem;
+  z-index: 10;
+}
+
+.arrowButton {
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.arrowButton:hover {
+  background: rgba(255, 255, 255, 1);
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding: 30px 0;
   }
 
-  .arrowButton {
-    background: rgba(255, 255, 255, 0.8);
-    border: none;
-    border-radius: 50%;
-    width: 2.5rem;
-    height: 2.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
+  .aboutImg {
+    width: 90%;
+    margin-bottom: 30px;
   }
-  
-  .arrowButton:hover {
-    background: rgba(255, 255, 255, 1);
-    transform: scale(1.1);
+
+  .descriptions p {
+    max-width: 100%;
+    padding: 0 15px;
   }
- 
-  @media (max-width: 768px) {
-    .about {
-      padding: 30px 0;
-    }
-    
-    .aboutImg {
-      width: 90%;
-      margin-bottom: 30px;
-    }
-    
-   
-    
-    .descriptions p {
-      max-width: 100%;
-      padding: 0 15px;
-    }
-  } 
+}

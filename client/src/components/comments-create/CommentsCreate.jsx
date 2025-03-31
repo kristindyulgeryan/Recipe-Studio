@@ -35,9 +35,6 @@ export default function CommentsCreate({ onCreate }) {
           Submit Comment
         </button>
       </form>
-      {!isLoggedIn && (
-        <p style={{ color: "red" }}>You must be logged in to post a comment.</p>
-      )}
     </div>
   );
 }

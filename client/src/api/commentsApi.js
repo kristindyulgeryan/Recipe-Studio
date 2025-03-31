@@ -10,6 +10,8 @@ function commentsReducer(state, action) {
       return [...state, action.payload];
     case "GET_ALL":
       return Array.isArray(action.payload) ? action.payload : [];
+    case "DELETE_COMMENT":
+      return state.filter((comment) => comment._id !== action.payload);
     default:
       return state;
   }
@@ -42,6 +44,8 @@ export const useComments = (recipeId) => {
     comments,
     addComment: (commentData) =>
       dispatch({ type: "ADD_COMMENT", payload: commentData }),
+    deleteComment: (commentId) =>
+      dispatch({ type: "DELETE_COMMENT", payload: commentId }),
   };
 };
 
@@ -55,4 +59,12 @@ export const useCreateComment = () => {
     return request.post(baseUrl, commentData);
   };
   return { create };
+};
+
+export const useDeleteComment = () => {
+  const { request } = useAuth();
+  const remove = (commentId) => {
+    return request.delete(`${baseUrl}/${commentId}`);
+  };
+  return { remove };
 };

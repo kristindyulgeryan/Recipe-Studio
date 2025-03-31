@@ -506,7 +506,7 @@ footer {
 
 .comments-section {
   flex: 0 0 100%;
-  margin-top: 20px;
+  margin-top: 10px;
   margin-bottom: 20px;
   text-align: left;
   font-family: "Poppins", sans-serif;
@@ -520,10 +520,48 @@ footer {
   margin-bottom: 50px;
 }
 
+.comment-content {
+  display: flex;
+  align-items: center;
+}
+
 .comment p {
   color: #fff;
   font-size: 14px;
   line-height: 1.6;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.comment-delete-button,
+.comment-delete-spacer {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.comment-delete-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.8rem;
+  color: #6c757d;
+  padding: 0;
+  transition: color 0.2s;
+  flex-shrink: 0;
+}
+
+.comment-delete-button:hover {
+  color: var(--primary-clr);
+}
+
+.empty {
+  color: black;
+  font-size: large;
+  font-weight: 600;
+  font-style: italic;
 }
 
 /* Title and content sections */
@@ -542,15 +580,16 @@ footer {
 }
 
 .recipe-image {
-  flex: 0 0 40%;
+  flex: 0 0 30%;
   text-align: center;
-  margin-right: 20px;
-  padding-top: 30px;
+  margin-right: 60px;
+  margin-top: 50px;
+  padding-top: 50px;
 }
 
 .recipe-image img {
-  width: 55%;
-  height: 150px;
+  width: 100%;
+  height: 250px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   object-fit: cover;
@@ -560,7 +599,7 @@ footer {
   flex: 0 0 55%;
   text-align: left;
   padding-bottom: 100px;
-  overflow: hidden; /* Create space for buttons */
+  overflow: hidden;
 }
 
 .recipe-description h4 {
@@ -571,7 +610,7 @@ footer {
 }
 
 .recipe-description p {
-  font-size: 12px;
+  font-size: 13px;
   line-height: 1.7;
   color: #fff;
   margin-bottom: 20px;
@@ -581,7 +620,6 @@ footer {
   box-sizing: border-box;
 }
 
-/* Прозрачен стил за бутоните */
 .buttons {
   display: flex;
   gap: 10px;
