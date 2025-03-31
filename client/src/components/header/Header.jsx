@@ -1,16 +1,29 @@
 import { useContext } from "react";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { UserContext } from "../../contexts/userContext";
 import SearchBar from "../search-bar/SearchBar";
 import { useSearchRecipes } from "../../api/recipeApi.js";
 
 export default function Header({ onSearchResults }) {
   const { email } = useContext(UserContext);
-  const { showAllRecipes } = useSearchRecipes();
+  const  showAllRecipes  = useSearchRecipes();
+  const navigate = useNavigate()
 
-  const handleGalleryClick = () => {
-    showAllRecipes();
-    onSearchResults?.(null);
+  const handleGalleryClick = async (e) => {
+    e.preventDefault();
+
+    try {
+      if (showAllRecipes && typeof showAllRecipes === 'function') {
+        await showAllRecipes(); 
+      }
+      onSearchResults?.(null);
+      navigate("/recipes");
+    } catch (error) {
+      console.error("Error loading recipes:", error);
+      navigate("/recipes"); 
+    }
+
+
   };
 
   return (
