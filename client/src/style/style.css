@@ -302,41 +302,10 @@ input[type="submit"].submit:hover {
   color: white;
 }
 
-.about {
-  background-color: rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(10px);
-
-  padding: 50px 0;
-}
-
-.about-sec .title-p {
-  font-size: 38px;
-  color: var(--primary-clr);
-}
-
-.about-img img {
-  width: 100%;
-}
-
-p.title-p {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: var(--primary-clr);
-  font-size: 17px;
-  font-weight: 600;
-  margin: 0;
-}
-
-p.title-p img {
+.title-p img {
   width: 20px;
   height: 20px;
   object-fit: contain;
-}
-
-h2.title-h {
-  color: var(--secondary-clr);
-  font-size: 38px;
 }
 
 /* recipes gallery */
