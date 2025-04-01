@@ -12,12 +12,12 @@
 }
 
 body.no-scroll {
-  background: url("/imgs/banner-bg.jpg") no-repeat center center/cover;
+  background: url("/imgs/banner-4.webp") no-repeat center center/cover;
   background-attachment: fixed;
 }
 
 section {
-  background: url("imgs/banner-bg.jpg") no-repeat center center/cover;
+  background: url("/imgs/banner-4.webp") no-repeat center center/cover;
   background-attachment: fixed;
   padding: 20px;
   min-height: calc(100vh - 50px);
@@ -224,7 +224,7 @@ img {
 
 #login,
 #register {
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   padding: 40px;
   border-radius: 15px;
@@ -290,16 +290,19 @@ input[type="submit"].submit:hover {
 
 .banner-content h6 {
   color: var(--primary-clr);
-  font-size: 20px;
+  font-size: 38px;
+  font-weight: 900;
 }
 
 .banner-content h2 {
   font-size: 48px;
-  color: white;
+  color: var(--secondary-clr);
 }
 
 .banner-content p {
-  color: white;
+  color: var(--secondary-clr);
+  font-size: 25px;
+  font-weight: 700;
 }
 
 .title-p img {
