@@ -12,12 +12,12 @@
 }
 
 body.no-scroll {
-  background: url("/imgs/banner-4.webp") no-repeat center center/cover;
+  background: url("/imgs/banner-1.webp") no-repeat center center/cover;
   background-attachment: fixed;
 }
 
 section {
-  background: url("/imgs/banner-4.webp") no-repeat center center/cover;
+  background: url("/imgs/banner-1.webp") no-repeat center center/cover;
   background-attachment: fixed;
   padding: 20px;
   min-height: calc(100vh - 50px);
