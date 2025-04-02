@@ -102,8 +102,6 @@
   display: flex;
   gap: 1rem;
   z-index: 10;
-  
-  
 }
 
 .arrowButton {
@@ -142,15 +140,15 @@
 
 @media (max-width: 768px) {
   .arrowContainer {
-    position: relative; 
+    position: relative;
     bottom: auto;
     left: auto;
     transform: none;
     margin-top: 15px;
     justify-content: center;
   }
-  
+
   .about {
-    min-height: 400px; /* Ensure enough space for vertical arrows */
+    min-height: 400px;
   }
 }

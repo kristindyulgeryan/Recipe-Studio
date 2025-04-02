@@ -1,9 +1,6 @@
-//
-
 export const validateLogin = (email, password) => {
   const errors = [];
 
-  // Enhanced email validation with specific messages
   if (!email.trim()) {
     errors.push("✉️ Email is required");
   } else if (!/^\S+@\S+\.\S+$/.test(email)) {
