@@ -1,16 +1,7 @@
-# React + Vite
+# Recipe Studio 🍳
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A cozy React-based platform for sharing and discovering recipes.
 
-Currently, two official plugins are available:
+## 🔍 Project Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-
-## Project Overview
-
-Recipe Studio is a web application where users can browse, create, and share recipes. The platform allows registered users to add recipes, like and comment on others’ recipes, and manage their own content.
+**Recipe Studio** is a Single Page Application (SPA) designed for cooking enthusiasts who want to share and discover delicious recipes in a warm, welcoming community. Whether you're a seasoned chef or a kitchen newbie, this platform provides an easy-to-use space to publish your culinary creations, connect with fellow food lovers, and draw inspiration from shared emotions and experiences around cooking.
