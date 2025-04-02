@@ -11,10 +11,10 @@ export default function About() {
 
   
   return (
-    <section className={`${style.aboutSec} py-5`}>
+    <section className={`${style.aboutSec} py-4`}>
       <div className="container">
         <div className={`${style.about} row position-relative `}>
-          <div className="col-lg-6 col-md-12 ">
+          <div className="col-md-6 text-center ">
             <div className={style.aboutImg}>
               {images.map((image, i) => (
                 <img 
@@ -32,7 +32,7 @@ export default function About() {
               ))}
             </div>
           </div>
-          <div className="col-lg-6 col-md-12">
+          <div className="col-md-6 ">
             <p className={style.titleP}>About Us</p>
             <h2 className={style.titleH}>
               Nurturing Health Through Homemade Cooking
@@ -43,7 +43,7 @@ export default function About() {
               ))}
             </div>
           </div>
-          <div className={style.arrowContainer}>
+          <div className={style.arrowContainer} >
           <button className={style.arrowButton} onClick={()=>setIndex((prev)=> prev === 0 ? images.length - 1 : prev-1)}>
             <ArrowLeft size={18} />
           </button>

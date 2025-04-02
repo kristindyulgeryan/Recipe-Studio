@@ -1,11 +1,12 @@
 export const images = [
-  "/imgs/image-2.jpg",
   "/imgs/image-1.jpg",
+  "/imgs/image-2.jpg",
   "/imgs/image-3.jpg",
   "/imgs/image-4.jpg",
 ];
 
 export const descriptions = [
+  "Here, we invite you to join us in creating dishes that bring people closer—recipes that are not just meals but experiences. So, grab an apron, turn on some soft music, and let’s cook something beautiful together! And when you do, capture those joyful moments and share them with us",
   "Welcome to Recipe Studio—where cooking is more than just a hobby, it’s our passion. Our goal is to make every dish something special, so you can create delicious memories in your own kitchen.",
   "At Recipe Studio, we believe in the power of homemade food to bring families and friends together while promoting health and wellness. Our mission is to provide simple, nourishing recipes that you can make at home, using fresh ingredients that are good for your body and soul.",
   "Our goal is to bring fresh, flavorful food into your life—whether you are a cooking pro or just learning your way around the kitchen. With easy-to-follow recipes and fresh ingredients, we hope to inspire you to make meals that are as comforting as they are delicious.",

@@ -16,12 +16,14 @@
 .contact .content h2 {
   font-size: 3em;
   color: #fff;
-  font-weight: 500;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 .contact .content p {
   color: #fff;
   font-size: 1.1em;
-  font-weight: 300;
+  font-weight: 600;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 .container {
   width: 60%;
@@ -58,6 +60,8 @@
   color: #52eedc;
   font-size: 24px;
   margin-right: 15px;
+  box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.8);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 .container .contactInfo .box .text {
@@ -75,13 +79,18 @@
   color: #52eedc;
   margin-top: 10px;
   margin-bottom: 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 .container .contactInfo .box .text p {
   position: relative;
   display: flex;
+  background-color: #464646;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  padding: 8px; 
   flex-direction: column;
   color: #fff;
   margin-top: 0;
+  border-radius: 10px;
 }
 
 .container .contactForm {
