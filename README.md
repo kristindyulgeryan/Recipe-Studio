@@ -7,3 +7,20 @@ A cozy React-based platform for sharing and discovering recipes.
 
 ## 🎥 Demo 
 ![Recipe Studio Demo](https://raw.githubusercontent.com/kristindyulgeryan/Recipe-Studio/main/StudioRecipe.gif)
+
+## ✨ Features
+### **Core Functionality**
+- 🍳 **Recipe Management**: Create, edit, delete recipes
+- 🔐 **User Authentication**: JWT login/register with protected routes
+
+### **Social Features**
+- 💬 **Comments**: Add/delete comments with real-time count
+
+### **Communication**
+- 📩 **Contact Form**: 
+  - Message submission with form validation
+  - Success/error feedback UI
+
+### **Security & Validation**
+- 🛡️ Route guards (public/private access)
+- ❌ Input sanitization & error handling
