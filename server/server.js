@@ -1518,6 +1518,16 @@
         _createdOn: 1743270432987,
         _id: "8b96fff9-d726-45a8-a369-0fb1f265c7cb",
       },
+      {
+        description:
+          "Wash and dry exterior of pumpkin. Cut off the top in a circle shape as it will be used as a lid.\nScrape out the stringy fibers and seeds. Discard fibers, but rinse and save the seeds for roasting later on, if desired. Rinse the inside of the pumpkin; pat dry.\nIn a saucepan, bring 3 cups of water to a boil. Add rice, stir, cover the pot and reduce heat to low. Cook rice for about 15 minutes. Rice should not be completely cooked. Drain any excess liquid.\nIn bowl, mix together the partially cooked rice, chopped, dried fruit, melted butter, salt, cinnamon, honey (or sugar), and nuts, if using.\nLoosely stuff filling into pumpkin; pour the ¼ cup hot water over the top of the filling.\nPlace the pumpkin on a baking sheet for support. Put the top of the pumpkin back on and bake at 325°F for about 1-1/2 to 2 hours or until soft. Insert a toothpick into the pumpkin to determine tenderness.\nCut into wedges; serve.",
+        image:
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Ghapama_tradicional.jpg/500px-Ghapama_tradicional.jpg",
+        title: "Armenian Ghapama",
+        _createdOn: 1743611030125,
+        _id: "c90aeca2-b480-4e22-9c9f-0685dcf2248a",
+        _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
+      },
     ],
     comments: [
       {
